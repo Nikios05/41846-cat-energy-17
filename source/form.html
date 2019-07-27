@@ -28,20 +28,125 @@
       </nav>
     </header>
 
+    <main class="page-form">
+      <h1 class="page-form__title">Подбор программы</h1>
+
+      <form class="form" action="" method="POST">
+        <h2 class="form__title">Заполните анкету и мы подберем программу питания для вашего кота</h2>
+
+        <h3 class="visually-hidden">Информация о Коте</h3>
+        <p class="form__item">
+          <label class="form__label">
+            Имя:*
+            <input class="form__text" type="text" name="cat-name" placeholder="БАРСИК">
+          </label>
+        </p>
+        <p class="form__item">
+          <label class="form__label">
+            Вес (кг):*
+            <input class="form__text" type="text" name="weight-name" placeholder="7">
+          </label>
+        </p>
+        <p class="form__item">
+          <label class="form__label">
+            Возвраст (лет):
+            <input class="form__text" type="text" name="cat-age" placeholder="7">
+          </label>
+        </p>
+
+        <h3 class="visually-hidden">Тип программы</h3>
+        <p class="form__item">
+          <label class="form__label">
+            <input class="form__radio" type="radio"  name="program-type">
+            Похудение
+          </label>
+        </p>
+        <p class="form__item">
+          <label class="form__label">
+            <input class="form__radio" type="radio" name="program-type">
+            Набор массы
+          </label>
+        </p>
+        <p class="form__item">
+          <label class="form__label">
+            <input class="form__radio" type="radio" name="program-type">
+            Не знаю (нужен ваш совет)
+          </label>
+        </p>
+
+        <h3 class="form__subtitle">Контактные данные (владельца кота)</h3>
+        <p class="form__item">
+          <label class="form__label">
+            e-mail:*
+            <input class="form__text" type="email" name="e-mail" placeholder="kuklachev@gmail.com">
+          </label>
+        </p>
+        <p class="form__item">
+          <label class="form__label">
+            Телефон:*
+            <input class="form__text" type="tel" name="telephone"  placeholder="8 (960) 900-60-90">
+          </label>
+        </p>
+
+        <h3 class="form__subtitle">Комментарий</h3>
+        <p class="form__item">
+          <textarea class="form__text-area" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
+        </p>
+
+        <h3 class="form__subtitle">Дополнительно</h3>
+        <p class="form__item">
+          <label class="form__label">
+            <input class="form__radio" type="radio"  name="additional">
+            Сахарозаменитель
+          </label>
+        </p>
+        <p class="form__item">
+          <label class="form__label">
+            <input class="form__radio" type="radio" name="additional">
+            Питьевая вода
+          </label>
+        </p>
+        <p class="form__item">
+          <label class="form__label">
+            <input class="form__radio" type="radio" name="additional">
+            Молоко
+          </label>
+        </p>
+        <p class="form__item">
+          <label class="form__label">
+            <input class="form__radio" type="radio" name="additional">
+            Витамины
+          </label>
+        </p>
+
+        <button class="form__submit button" type="submit">Отправить заявку</button>
+
+        <i class="form__explanation">* — Обязательные поля</i>
+
+      </form>
+    </main>
+
     <footer class="page-footer">
+      <div class="page-footer__address address">
+        <b class="address__title">Приглашаем к сотрудничеству дилеров!</b>
+        <p class="address__text">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
+        <p class="address__map address__map--pin">
+          <img class="address__map-image" src="img/bg-map-mobile@1x.png" width="320" height="400" alt="Офис компании по адресу ул. Большая Конюшенная, д. 19/8 Санкт-Петербург">
+        </p>
+      </div>
       <a class="page-footer__logo" href="index.html">
         <img class="page-footer__logo-image" src="img/logo-footer.svg" width="128" height="24" alt="Кэт энерджи">
       </a>
       <div class="page-footer__social social">
         <ul class="social__list">
           <li class="social__item">
-            <a href="#" class="social__link       social__link--vkontakte">МыВконтакте</a>
+            <a href="#" class="social__link social__link--vkontakte">Мы Вконтакте</a>
           </li>
           <li class="social__item">
-            <a href="#"       class="social__linksocial__link--instagram">МывИнстаграме</a>
+            <a href="#" class="social__linksocial__link--instagram">Мы в Инстаграме</a>
           </li>
           <li class="social__item">
-            <a href="#" class="social__link       social__link--facebook">МывФейсбуке</a>
+            <a href="#" class="social__link social__link--facebook">Мы в Фейсбуке</a>
           </li>
         </ul>
       </div>
