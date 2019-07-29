@@ -1,0 +1,24 @@
+.button {
+  display: block;
+  width: 100%;
+  padding: 13px 0 10px 0;
+
+  .oswald-font-m(14px, 18px);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.button--green {
+  color: rgba(255, 255, 255, 1);
+  background-color: @light-green;
+}
+
+.button--green:hover,
+.button--green:focus {
+  background-color: @dark-green;
+}
+
+.button--green:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: @dark-green;
+}
