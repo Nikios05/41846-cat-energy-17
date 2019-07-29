@@ -5,11 +5,12 @@
 
   .oswald-font-m(14px, 18px);
   text-transform: uppercase;
+  text-decoration: none;
   text-align: center;
 }
 
 .button--green {
-  color: rgba(255, 255, 255, 1);
+  color: #ffffff;
   background-color: @light-green;
 }
 
@@ -19,6 +20,20 @@
 }
 
 .button--green:active {
-  color: rgba(255, 255, 255, 0.3);
+  color: fade(#ffffff, 30%);
   background-color: @dark-green;
+}
+
+.button--gray {
+  color: @dark-gray;
+  background-color: @light-gray;
+}
+
+.button--gray:hover,
+.button--gray:focus {
+  background-color: @medium-gray;
+}
+
+.button--gray:active {
+  color: fade(@dark-gray, 30%);
 }
