@@ -34,7 +34,7 @@
         <form class="form page-main__form" action="" method="POST">
           <h2 class="form__title">Заполните анкету и мы подберем<br> программу питания для вашего кота</h2>
 
-          <div class="form__info">
+          <fieldset class="form__info">
             <h3 class="visually-hidden title">Информация о Коте</h3>
             <p class="form__item">
               <label class="form__label form__label--text">
@@ -54,9 +54,9 @@
                 <input class="form__text" type="text" name="cat-age" placeholder="7">
               </label>
             </p>
-          </div>
+          </fieldset>
 
-          <div class="form__type">
+          <fieldset class="form__type">
             <h3 class="visually-hidden title">Тип программы</h3>
             <p class="form__item">
               <label class="form__label form__label--radio">
@@ -76,52 +76,58 @@
                 Не знаю (нужен ваш совет)
               </label>
             </p>
-          </div>
+          </fieldset>
 
-          <h3 class="form__subtitle title title--size-m title--black">Контактные данные (владельца кота)</h3>
-          <p class="form__item">
-            <label class="form__label">
-              e-mail:*
-              <input class="form__text" type="email" name="e-mail" placeholder="kuklachev@gmail.com">
-            </label>
-          </p>
-          <p class="form__item">
-            <label class="form__label">
-              Телефон:*
-              <input class="form__text" type="tel" name="telephone"  placeholder="8 (960) 900-60-90">
-            </label>
-          </p>
+          <fieldset class="form__contact">
+            <h3 class="form__subtitle title title--size-m title--black">Контактные данные (владельца кота)</h3>
+            <p class="form__item">
+              <label class="form__label">
+                e-mail:*
+                <input class="form__text" type="email" name="e-mail" placeholder="kuklachev@gmail.com">
+              </label>
+            </p>
+            <p class="form__item">
+              <label class="form__label">
+                Телефон:*
+                <input class="form__text" type="tel" name="telephone"  placeholder="8 (960) 900-60-90">
+              </label>
+            </p>
+          </fieldset>
 
-          <h3 class="form__subtitle title title--size-m title--black">Комментарий</h3>
-          <p class="form__item">
-            <textarea class="form__text-area" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
-          </p>
+          <fieldset class="form__comment">
+            <h3 class="form__subtitle title title--size-m title--black">Комментарий</h3>
+            <p class="form__item">
+              <textarea class="form__text-area" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
+            </p>
+          </fieldset>
 
-          <h3 class="form__subtitle title title--size-m title--black">Дополнительно</h3>
-          <p class="form__item">
-            <label class="form__label">
-              <input class="form__checkbox" type="checkbox"  name="additional">
-              Сахарозаменитель
-            </label>
-          </p>
-          <p class="form__item">
-            <label class="form__label">
-              <input class="form__checkbox" type="checkbox" name="additional">
-              Питьевая вода
-            </label>
-          </p>
-          <p class="form__item">
-            <label class="form__label">
-              <input class="form__checkbox" type="checkbox" name="additional">
-              Молоко
-            </label>
-          </p>
-          <p class="form__item">
-            <label class="form__label">
-              <input class="form__checkbox" type="checkbox" name="additional">
-              Витамины
-            </label>
-          </p>
+          <fieldset class="form__add">
+            <h3 class="form__subtitle title title--size-m title--black">Дополнительно</h3>
+            <p class="form__item">
+              <label class="form__label">
+                <input class="form__checkbox" type="checkbox"  name="additional">
+                Сахарозаменитель
+              </label>
+            </p>
+            <p class="form__item">
+              <label class="form__label">
+                <input class="form__checkbox" type="checkbox" name="additional">
+                Питьевая вода
+              </label>
+            </p>
+            <p class="form__item">
+              <label class="form__label">
+                <input class="form__checkbox" type="checkbox" name="additional">
+                Молоко
+              </label>
+            </p>
+            <p class="form__item">
+              <label class="form__label">
+                <input class="form__checkbox" type="checkbox" name="additional">
+                Витамины
+              </label>
+            </p>
+          </fieldset>
 
           <button class="form__submit button button--green" type="submit">Отправить заявку</button>
 

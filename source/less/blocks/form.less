@@ -10,13 +10,17 @@
 .form__item {
   display: block;
   margin: 0;
+  margin-bottom: 15px;
   padding: 0;
+}
+
+.form__item:last-child {
+  margin-bottom: 0;
 }
 
 .form__label {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
   .oswald-font-m(16px, 18px);
   text-transform: uppercase;
 }
@@ -49,18 +53,37 @@
   margin-right: 15px;
 }
 
-.form__info {
-  margin-bottom: 25px;
+.form-fieldset(){
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+  border: none;
 }
 
-.form__type {
-  margin-top: 20px;
+.form__info {
+  .form-fieldset();
   margin-bottom: 20px;
 }
 
+.form__type {
+  .form-fieldset();
+  padding: 25px 0;
+}
+
+.form__contact {
+  .form-fieldset();
+}
+
+.form__comment {
+  .form-fieldset();
+}
+
+.form__add {
+  .form-fieldset();
+}
+
 .form__subtitle {
-  margin-top: 30px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .form__text-area {
