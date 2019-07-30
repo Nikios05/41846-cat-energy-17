@@ -35,11 +35,11 @@
           <h2 class="form__title">Заполните анкету и мы подберем<br> программу питания для вашего кота</h2>
 
           <fieldset class="form__info">
-            <h3 class="visually-hidden title">Информация о Коте</h3>
+            <h3 class="visually-hidden">Информация о Коте</h3>
             <p class="form__item">
               <label class="form__label form__label--text">
                 Имя:*
-                <input class="form__text" type="text" name="cat-name" placeholder="БАРСИК">
+                <input class="form__text" type="text" name="cat-name"  placeholder="БАРСИК">
               </label>
             </p>
             <p class="form__item">
@@ -57,22 +57,22 @@
           </fieldset>
 
           <fieldset class="form__type">
-            <h3 class="visually-hidden title">Тип программы</h3>
+            <h3 class="visually-hidden">Тип программы</h3>
             <p class="form__item">
               <label class="form__label form__label--radio">
-                <input class="form__radio" type="radio"  name="program-type" checked>
+                <input class="form__radio" type="radio"  value="weight-loss" name="program-type" checked>
                 Похудение
               </label>
             </p>
             <p class="form__item">
               <label class="form__label form__label--radio">
-                <input class="form__radio" type="radio" name="program-type">
+                <input class="form__radio" type="radio" value="weight-gain" name="program-type">
                 Набор массы
               </label>
             </p>
             <p class="form__item">
               <label class="form__label form__label--radio">
-                <input class="form__radio" type="radio" name="program-type">
+                <input class="form__radio" type="radio" value="not-know" name="program-type">
                 Не знаю (нужен ваш совет)
               </label>
             </p>
@@ -105,25 +105,25 @@
             <h3 class="form__subtitle title title--size-m title--black">Дополнительно</h3>
             <p class="form__item">
               <label class="form__label">
-                <input class="form__checkbox" type="checkbox"  name="additional" checked>
+                <input class="form__checkbox" type="checkbox"  value="sweetener" name="additional" checked>
                 Сахарозаменитель
               </label>
             </p>
             <p class="form__item">
               <label class="form__label">
-                <input class="form__checkbox" type="checkbox" name="additional">
+                <input class="form__checkbox" type="checkbox" value="water" name="additional">
                 Питьевая вода
               </label>
             </p>
             <p class="form__item">
               <label class="form__label">
-                <input class="form__checkbox" type="checkbox" name="additional">
+                <input class="form__checkbox" type="checkbox" value="milk" name="additional">
                 Молоко
               </label>
             </p>
             <p class="form__item">
               <label class="form__label">
-                <input class="form__checkbox" type="checkbox" name="additional">
+                <input class="form__checkbox" type="checkbox" value="vitamins" name="additional">
                 Витамины
               </label>
             </p>
