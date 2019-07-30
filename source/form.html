@@ -3,78 +3,81 @@
   <head>
     <meta charset="utf-8">
     <title>Кэт энерджи: подбор программы</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
     <header class="page-header">
-      <a class="page-header__logo" href="index.html">
+      <a class="page-header__logo" href="#">
         <img class="page-header__logo-image" src="img/logo-mobile.svg" width="191" height="38" alt="Кэт энерджи">
       </a>
       <nav class="main-nav">
-        <button class="main-nav__toggle" type="button">Открыть меню</button>
-        <div class="main-nav-wrapper">
+        <button class="main-nav__toggle main-nav__toggle--open" type="button">Открыть меню</button>
           <ul class="main-nav__list site-list">
-            <li class="site-list__item site-list__item--active">
-              <a href="index.html">Главная</a>
+            <li class="site-list__item">
+              <a class="site-list__link" href="index.html">Главная</a>
             </li>
             <li class="site-list__item">
-              <a href="catalog.html">Каталог продукции</a>
+              <a class="site-list__link" href="catalog.html">Каталог продукции</a>
             </li>
             <li class="site-list__item">
-              <a>Подбор программы</a>
+              <a class="site-list__link site-list__link--active">Подбор программы</a>
             </li>
           </ul>
-        </div>
       </nav>
     </header>
 
-    <main class="page-form">
-      <h1 class="page-form__title">Подбор программы</h1>
+    <main class="page-main page-main__container">
+      <h1 class="title title--size-l title--black">Подбор программы</h1>
 
-      <form class="form" action="" method="POST">
-        <h2 class="form__title">Заполните анкету и мы подберем программу питания для вашего кота</h2>
+      <form class="form page-main__form" action="" method="POST">
+        <h2 class="form__title">Заполните анкету и мы подберем<br> программу питания для вашего кота</h2>
 
-        <h3 class="visually-hidden">Информация о Коте</h3>
-        <p class="form__item">
-          <label class="form__label">
-            Имя:*
-            <input class="form__text" type="text" name="cat-name" placeholder="БАРСИК">
-          </label>
-        </p>
-        <p class="form__item">
-          <label class="form__label">
-            Вес (кг):*
-            <input class="form__text" type="text" name="weight-name" placeholder="7">
-          </label>
-        </p>
-        <p class="form__item">
-          <label class="form__label">
-            Возвраст (лет):
-            <input class="form__text" type="text" name="cat-age" placeholder="7">
-          </label>
-        </p>
+        <div class="form__info">
+          <h3 class="visually-hidden title">Информация о Коте</h3>
+          <p class="form__item">
+            <label class="form__label form__label--text">
+              Имя:*
+              <input class="form__text" type="text" name="cat-name" placeholder="БАРСИК">
+            </label>
+          </p>
+          <p class="form__item">
+            <label class="form__label form__label--text">
+              Вес (кг):*
+              <input class="form__text" type="text" name="weight-name" placeholder="7">
+            </label>
+          </p>
+          <p class="form__item">
+            <label class="form__label form__label--text">
+              Возраст (лет):
+              <input class="form__text" type="text" name="cat-age" placeholder="7">
+            </label>
+          </p>
+        </div>
 
-        <h3 class="visually-hidden">Тип программы</h3>
-        <p class="form__item">
-          <label class="form__label">
-            <input class="form__radio" type="radio"  name="program-type">
-            Похудение
-          </label>
-        </p>
-        <p class="form__item">
-          <label class="form__label">
-            <input class="form__radio" type="radio" name="program-type">
-            Набор массы
-          </label>
-        </p>
-        <p class="form__item">
-          <label class="form__label">
-            <input class="form__radio" type="radio" name="program-type">
-            Не знаю (нужен ваш совет)
-          </label>
-        </p>
+        <div class="form__type">
+          <h3 class="visually-hidden title">Тип программы</h3>
+          <p class="form__item">
+            <label class="form__label form__label--radio">
+              <input class="form__radio" type="radio"  name="program-type">
+              Похудение
+            </label>
+          </p>
+          <p class="form__item">
+            <label class="form__label form__label--radio">
+              <input class="form__radio" type="radio" name="program-type">
+              Набор массы
+            </label>
+          </p>
+          <p class="form__item">
+            <label class="form__label form__label--radio">
+              <input class="form__radio" type="radio" name="program-type">
+              Не знаю (нужен ваш совет)
+            </label>
+          </p>
+        </div>
 
-        <h3 class="form__subtitle">Контактные данные (владельца кота)</h3>
+        <h3 class="form__subtitle title title--size-m title--black">Контактные данные (владельца кота)</h3>
         <p class="form__item">
           <label class="form__label">
             e-mail:*
@@ -88,38 +91,38 @@
           </label>
         </p>
 
-        <h3 class="form__subtitle">Комментарий</h3>
+        <h3 class="form__subtitle title title--size-m title--black">Комментарий</h3>
         <p class="form__item">
           <textarea class="form__text-area" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
         </p>
 
-        <h3 class="form__subtitle">Дополнительно</h3>
+        <h3 class="form__subtitle title title--size-m title--black">Дополнительно</h3>
         <p class="form__item">
           <label class="form__label">
-            <input class="form__radio" type="radio"  name="additional">
+            <input class="form__checkbox" type="checkbox"  name="additional">
             Сахарозаменитель
           </label>
         </p>
         <p class="form__item">
           <label class="form__label">
-            <input class="form__radio" type="radio" name="additional">
+            <input class="form__checkbox" type="checkbox" name="additional">
             Питьевая вода
           </label>
         </p>
         <p class="form__item">
           <label class="form__label">
-            <input class="form__radio" type="radio" name="additional">
+            <input class="form__checkbox" type="checkbox" name="additional">
             Молоко
           </label>
         </p>
         <p class="form__item">
           <label class="form__label">
-            <input class="form__radio" type="radio" name="additional">
+            <input class="form__checkbox" type="checkbox" name="additional">
             Витамины
           </label>
         </p>
 
-        <button class="form__submit button" type="submit">Отправить заявку</button>
+        <button class="form__submit button button--green" type="submit">Отправить заявку</button>
 
         <i class="form__explanation">* — Обязательные поля</i>
 
@@ -127,32 +130,35 @@
     </main>
 
     <footer class="page-footer">
-      <div class="page-footer__address address">
-        <b class="address__title">Приглашаем к сотрудничеству дилеров!</b>
-        <p class="address__text">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
+      <div class="page-footer__address  address">
+        <div class="address__wrapper page-footer__container">
+          <p class="address__invite">Приглашаем<br> к сотрудничеству дилеров!</p>
+          <p class="address__text">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
+        </div>
         <p class="address__map address__map--pin">
           <img class="address__map-image" src="img/bg-map-mobile@1x.png" width="320" height="400" alt="Офис компании по адресу ул. Большая Конюшенная, д. 19/8 Санкт-Петербург">
         </p>
       </div>
-      <a class="page-footer__logo" href="index.html">
-        <img class="page-footer__logo-image" src="img/logo-footer.svg" width="128" height="24" alt="Кэт энерджи">
-      </a>
-      <div class="page-footer__social social">
-        <ul class="social__list">
-          <li class="social__item">
+      <div class="page-footer__container">
+        <a class="page-footer__logo" href="#">
+          <img class="page-footer__logo-image" src="img/logo-footer.svg" width="128" height="24" alt="Кэт энерджи">
+        </a>
+        <ul class="social-list page-footer__social">
+          <li class="social-list__item">
             <a href="#" class="social__link social__link--vkontakte">Мы Вконтакте</a>
           </li>
-          <li class="social__item">
-            <a href="#" class="social__linksocial__link--instagram">Мы в Инстаграме</a>
+          <li class="social-list__item">
+            <a href="#" class="social__link social__link--instagram">Мы в Инстаграме</a>
           </li>
-          <li class="social__item">
+          <li class="social-list__item">
             <a href="#" class="social__link social__link--facebook">Мы в Фейсбуке</a>
           </li>
         </ul>
       </div>
-      <div class="page-footer__copyright copyright">
+      <div class="copyright page-footer__copyright page-footer__container">
         <a class="copyright__link" href="#">HTML Academy</a>
       </div>
     </footer>
+
   </body>
 </html>
