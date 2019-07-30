@@ -1,0 +1,32 @@
+.product-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 320px;
+  height: 305px;
+  background: @light-green url("../../img/index-background-mobile@1x.jpg") no-repeat 0 0;
+
+  z-index: -1;
+}
+
+.product-banner__tagline {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  text-align: center;
+
+  .oswald-font-m(14px, 14px);
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.product-banner__image {
+  margin-bottom: 5px;
+}
+
+.product-banner__button {
+  text-decoration: none;
+  color: #ffffff;
+}
