@@ -11,3 +11,18 @@
   padding-bottom: 15px;
   border-bottom: 1px solid @line-gray;
 }
+
+@media (min-width: @table-width) {
+  .page-header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .page-header__logo {
+    margin-top: 0;
+    padding: 0;
+    border: none;
+  }
+}

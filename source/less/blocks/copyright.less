@@ -1,4 +1,18 @@
 .copyright__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   .arial-font(16px, 16px);
   text-decoration: none;
+}
+
+.copyright__link::after {
+  content: "";
+  display: inline-block;
+  align-self: center;
+  width: 30px;
+  height: 35px;
+  vertical-align: middle;
+
+  background: url("../../img/htmlacademy.svg") no-repeat 50% 50%;
 }

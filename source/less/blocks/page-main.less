@@ -1,18 +1,11 @@
 .page-main {
   position: relative;
   padding-top: 1px;
-
-  width: 320px;
 }
 
 .page-main__container {
   width: 280px;
   margin: 0 auto;
-}
-
-.page-main__title {
-  margin-top: 30px;
-  margin-bottom: 15px;
 }
 
 .page-main__product-banner {
@@ -29,4 +22,18 @@
 
 .page-main__form {
   margin-bottom: 30px;
+}
+
+@media (min-width: @table-width) {
+  .page-main {
+    width: auto;
+  }
+
+  .page-main__container {
+    width: 710px;
+  }
+
+  .page-main__product-banner {
+    margin-bottom: 0;
+  }
 }

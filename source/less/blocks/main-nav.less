@@ -18,3 +18,15 @@
   height: 18px;
   background: url("../../img/icon-close.svg") no-repeat 0 0;
 }
+
+@media (min-width: @table-width) {
+  .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 500px;
+  }
+}

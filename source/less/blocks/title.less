@@ -4,10 +4,10 @@
 
   font-family: "Oswald", "Arial", sans-serif;
   font-weight: 400;
+  color: #000000;
 }
 
 .title--size-l {
-  margin-bottom: 30px;
   font-size: 36px;
   line-height: 60px;
 }
@@ -17,15 +17,9 @@
   line-height: 24px;
 }
 
-.title--main-font {
-  text-align: center;
-  line-height: 36px;
-}
 
-.title--white {
-  color: #ffffff;
-}
-
-.title--black {
-  color: #000000;
+@media (min-width: @table-width) {
+  .title--size-l {
+    font-size: 60px;
+  }
 }
