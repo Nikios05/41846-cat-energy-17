@@ -70,3 +70,38 @@
     left: 90px;
   }
 }
+
+@media (min-width: @desktop-width) {
+  .product-banner {
+    position: static;
+    margin-bottom: 270px;
+  }
+
+  .product-banner--bg-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 720px;
+    height: 692px;
+
+    background: @light-green url("../../img/index-background-desktop@1x.jpg") no-repeat 0 0;
+    z-index: -1;
+  }
+
+  .product-banner__button {
+    position: static;
+    margin-left: 90px;
+  }
+
+  .product-banner__image {
+    position: absolute;
+    top: 110px;
+    right: 325px;
+  }
+
+  .product-banner__tagline {
+    margin-bottom: 50px;
+  }
+}

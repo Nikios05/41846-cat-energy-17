@@ -17,12 +17,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
+    padding: 25px 30px;
   }
 
   .page-header__logo {
     margin-top: 0;
     padding: 0;
     border: none;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page-header__wrapper {
+    padding: 55px 60px;
+  }
+
+  .page-header {
+    background-color: transparent;
   }
 }
