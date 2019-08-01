@@ -6,10 +6,14 @@
 }
 
 .page-header__logo {
+  width: 100%;
   margin-top: 10px;
-  padding-left: 20px;
   padding-bottom: 15px;
   border-bottom: 1px solid @line-gray;
+}
+
+.page-header__logo--ml {
+  margin-left: 20px;
 }
 
 @media (min-width: @table-width) {
@@ -23,6 +27,7 @@
   .page-header__logo {
     margin-top: 0;
     padding: 0;
+    width: 200px;
     border: none;
   }
 }

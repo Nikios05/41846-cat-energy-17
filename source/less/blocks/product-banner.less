@@ -1,7 +1,11 @@
+.product-banner {
+  position: relative;
+}
+
 .product-banner::before {
   content: "";
   position: absolute;
-  top: 250px;
+  top: 0;
   left: 0;
   width: 100%;
   height: 305px;
@@ -11,7 +15,9 @@
 }
 
 .product-banner__title {
-  margin-top: 30px;
+  padding-top: 30px;
+  width: 280px;
+  margin: 0 auto;
   margin-bottom: 15px;
 }
 
@@ -33,15 +39,19 @@
 }
 
 .product-banner__image {
+  display: block;
+  margin: 0 auto;
   margin-bottom: 5px;
+}
+
+.product-banner__button {
+  display: block;
+  width: 280px;
+  margin: 0 auto;
 }
 
 
 @media (min-width: @table-width) {
-  .product-banner {
-    position: relative;
-  }
-
   .product-banner::before {
     display: none;
   }
