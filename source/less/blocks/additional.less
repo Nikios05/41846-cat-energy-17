@@ -1,5 +1,19 @@
 .additional__title {
-  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 25px;
+  border-bottom: 1px solid @line-gray;
+}
+
+.additional__title--line::before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  right: -20px;
+
+  width: 55px;
+  height: 3px;
+
+  background-color: @light-green;
 }
 
 .additional__list {
@@ -11,21 +25,33 @@
 
 .additional__item {
   padding: 15px 0 20px;
+  border-bottom: 1px solid @line-gray;
 }
 
 .additional__name {
   margin: 0;
   padding: 0;
+  margin-bottom: 10px;
 
   .oswald-font-m(16px, 16px);
   text-transform: uppercase;
 }
 
+.additional__description {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
 .additional__value {
+  margin: 0;
+  padding: 0;
   .arial-font(14px, 14px);
 }
 
 .additional__cost {
+  margin: 0;
+  padding: 0;
   .arial-font(14px, 14px);
 }
 
@@ -39,6 +65,7 @@
 }
 
 .additional__gift-description {
+  position: relative;
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
@@ -48,4 +75,21 @@
   .arial-font(16px, 20px);
   text-align: center;
   color: #ffffff;
+}
+
+.additional__gift-description::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -28px;
+
+  width: 56px;
+  height: 60px;
+
+  background: url("../../img/icon-gift.svg") no-repeat 0 0;
+}
+
+.additional-wrapper {
+  margin-bottom: 40px;
 }

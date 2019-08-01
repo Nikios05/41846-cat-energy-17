@@ -8,28 +8,32 @@
   <body class="content">
 
     <header class="page-header">
-      <a class="logo logo--full page-header__logo" href="#">
-        <img class="logo-image" src="img/logo-mobile.svg" width="191" height="38" alt="Кэт энерджи">
-      </a>
-      <nav class="main-nav">
-        <button class="main-nav__toggle main-nav__toggle--open" type="button">Открыть меню</button>
-          <ul class="main-nav__list site-list">
-            <li class="site-list__item">
-              <a class="site-list__link" href="index.html">Главная</a>
-            </li>
-            <li class="site-list__item">
-              <a class="site-list__link" href="catalog.html">Каталог продукции</a>
-            </li>
-            <li class="site-list__item">
-              <a class="site-list__link site-list__link--active">Подбор программы</a>
-            </li>
-          </ul>
-      </nav>
+      <div class="page-header__wrapper">
+        <div class="page-header__logo">
+          <a class="logo logo--full" href="#">
+            <img class="logo-image" src="img/logo-mobile.svg" width="191" height="38" alt="Кэт энерджи">
+          </a>
+        </div>
+        <nav class="main-nav">
+          <button class="main-nav__toggle main-nav__toggle--open" type="button">Открыть меню</button>
+            <ul class="main-nav__list site-list">
+              <li class="site-list__item">
+                <a class="site-list__link" href="index.html">Главная</a>
+              </li>
+              <li class="site-list__item">
+                <a class="site-list__link" href="catalog.html">Каталог продукции</a>
+              </li>
+              <li class="site-list__item">
+                <a class="site-list__link site-list__link--active">Подбор программы</a>
+              </li>
+            </ul>
+        </nav>
+      </div>
     </header>
 
     <main class="page-main">
       <div class="page-main__container">
-        <h1 class="title title--size-l">Подбор программы</h1>
+        <h1 class="page-main__title title title--size-l">Подбор программы</h1>
 
         <form class="form page-main__form" action="" method="POST">
           <h2 class="form__title">Заполните анкету и мы подберем<br> программу питания для вашего кота</h2>
@@ -135,8 +139,8 @@
     </main>
 
     <footer class="page-footer">
-      <div class="page-footer__address  address">
-        <div class="address__wrapper page-footer__container">
+      <div class="page-footer__address address">
+        <div class="address__wrapper">
           <p class="address__invite">Приглашаем<br> к сотрудничеству дилеров!</p>
           <p class="address__text">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
         </div>
@@ -159,9 +163,9 @@
             <a href="#" class="social__link social__link--facebook">Мы в Фейсбуке</a>
           </li>
         </ul>
-      </div>
-      <div class="copyright page-footer__copyright page-footer__container">
-        <a class="copyright__link" href="#">HTML Academy</a>
+        <div class="copyright page-footer__copyright">
+          <a class="copyright__link" href="#">HTML Academy</a>
+        </div>
       </div>
     </footer>
 
