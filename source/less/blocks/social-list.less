@@ -17,35 +17,35 @@
 
 .social__link {
   display: inline-block;
-  width: 25px;
-  height: 20px;
   vertical-align: middle;
   font-size: 0;
 }
 
-.social__link::before {
-  content: "";
-  display: inline-block;
-
-  width: 25px;
-  height: 20px;
-  vertical-align: middle;
+.social__icon path, 
+.social__icon circle {
+  fill: @dark-gray;
 }
 
-.social__link--vkontakte::before {
-  background: url("../img/icon-vk.svg") no-repeat 50% 50%;
+.social__icon:hover path,
+.social__icon:hover circle,
+.social__icon:focus path,
+.social__icon:focus circle {
+  fill: @light-green;
 }
 
-.social__link--instagram::before {
-  background: url("../img/icon-insta.svg") no-repeat 50% 50%;
-}
-
-.social__link--facebook::before {
-  background: @light-gray url("../img/icon-fb.svg") no-repeat 50% 50%;
+.social__icon:active path,
+.social__icon:active circle {
+  fill: @light-green;
+  opacity: 0.3;
 }
 
 @media (min-width: @table-width) {
   .social-list {
     border: none;
+  }
+
+  .social__icon {
+    width: 35px;
+    height: 30px;
   }
 }
