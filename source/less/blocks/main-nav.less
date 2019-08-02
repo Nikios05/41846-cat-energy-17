@@ -1,6 +1,6 @@
 .main-nav__toggle {
   position: absolute;
-  top: 20px;
+  top: 10px;
   right: 20px;
 
   border: none;
@@ -10,11 +10,23 @@
 .main-nav__toggle--open {
   width: 24px;
   height: 24px;
-  background: url("../../img/icon-mobile-menu.svg") no-repeat 0 0;
+  background: url("../img/icon-mobile-menu.svg") no-repeat 0 0;
 }
 
 .main-nav__toggle--close {
   width: 18px;
   height: 18px;
-  background: url("../../img/icon-close.svg") no-repeat 0 0;
+  background: url("../img/icon-close.svg") no-repeat 0 0;
+}
+
+@media (min-width: @table-width) {
+  .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 500px;
+  }
 }

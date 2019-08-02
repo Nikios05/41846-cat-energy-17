@@ -1,7 +1,47 @@
 .page-header {
   position: relative;
 
-  width: 280px;
-  padding: 10px 20px 15px 20px;
+  margin: 0 auto;
   background-color: #ffffff;
+}
+
+.page-header__logo {
+  width: 100%;
+  margin-top: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid @line-gray;
+}
+
+@media (max-width: @table-width - 1) {
+  .page-header__logo--ml {
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: @table-width) {
+  .page-header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+  }
+
+  .page-header__logo {
+    padding-bottom: 0;
+    margin-top: 0;
+    width: 200px;
+    border: none;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page-header__wrapper {
+    padding: 55px 110px;
+    margin: 0 auto;
+    max-width: 1220px;
+  }
+
+  .page-header {
+    background-color: transparent;
+  }
 }

@@ -1,4 +1,28 @@
 .copyright__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   .arial-font(16px, 16px);
+  color: @dark-gray;
   text-decoration: none;
+}
+
+.copyright__icon path {
+  fill: @dark-gray;
+}
+
+.copyright__link:hover > .copyright__icon path,
+.copyright__link:focus > .copyright__icon path {
+  fill: @light-green;
+}
+
+.copyright__link:active {
+  opacity: 0.3;
+}
+
+@media (min-width: @table-width) {
+  .copyright__icon {
+    margin-left: 25px;
+  }
 }
