@@ -12,8 +12,10 @@
   border-bottom: 1px solid @line-gray;
 }
 
-.page-header__logo--ml {
-  margin-left: 20px;
+@media (max-width: @table-width - 1) {
+  .page-header__logo--ml {
+    margin-left: 20px;
+  }
 }
 
 @media (min-width: @table-width) {
@@ -25,8 +27,8 @@
   }
 
   .page-header__logo {
+    padding-bottom: 0;
     margin-top: 0;
-    padding: 0;
     width: 200px;
     border: none;
   }
@@ -34,7 +36,8 @@
 
 @media (min-width: @desktop-width) {
   .page-header__wrapper {
-    padding: 55px 60px;
+    padding: 55px 110px;
+    max-width: 1440px;
   }
 
   .page-header {
