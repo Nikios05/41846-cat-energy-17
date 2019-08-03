@@ -43,13 +43,13 @@
   margin-bottom: 12px;
 }
 
-.additional__value {
+.additional__cost {
   margin: 0;
   padding: 0;
   .arial-font(14px, 14px);
 }
 
-.additional__cost {
+.additional__value {
   margin: 0;
   padding: 0;
   .arial-font(14px, 14px);
@@ -92,4 +92,66 @@
 
 .additional-wrapper {
   margin-bottom: 40px;
+}
+
+@media (min-width: @table-width) {
+  .additional-wrapper {
+    margin-bottom: 70px;
+  }
+
+  .additional__title {
+    padding-bottom: 70px;
+  }
+
+  .additional__name {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .additional__description p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .additional__item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 0;
+  }
+
+  .additional__value {
+    margin-right: 50px;
+  }
+
+  .additional__button {
+    width: 100%;
+  }
+
+  .additional__title--line::before {
+    display: none;
+  }
+
+  .additional__gift {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 200px;
+    background: url("../img/gift-photo-tablet@1x.jpg") no-repeat 0 0;
+  }
+
+  .additional__gift-description {
+    margin: 0;
+    padding: 0;
+    padding-left: 335px;
+    text-align: left;
+  }
+
+  .additional__gift-description::before {
+    top: 0;
+    left: 0;
+    margin-left: 0;
+  }
 }

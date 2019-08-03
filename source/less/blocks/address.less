@@ -16,9 +16,62 @@
 }
 
 .address__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 280px;
+  margin: 0 auto;
   margin-bottom: 25px;
 }
 
 .address__map {
+  margin: 0;
+  padding: 0;
+
   background-color: @light-gray;
+}
+
+@media (min-width: @table-width) {
+  .address__wrapper {
+    width: 630px;
+  }
+
+  .address__invite {
+    width: 160px;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .address__text {
+    width: 160px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+  }
+
+  .address__text span {
+    display: block;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .address {
+    position: relative;
+  }
+
+  .address__wrapper {
+    position: absolute;
+    top: 95px;
+    left: 110px;
+    justify-content: space-around;
+    width: 570px;
+    height: 200px;
+
+    background-color: #ffffff;
+  }
+
+  .address__map {
+    background-color: @light-green;
+  }
 }
