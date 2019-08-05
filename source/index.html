@@ -105,12 +105,24 @@
               <b class="example__subtitle">Затраты на питание: <span>15 000 руб.</span></b>
             </div>
           </div>
-          <div class="example__slider">
-            <img class="example__image example__image--active" width="320" height="240" src="img/before-mobile@1x.png" alt="Борис до диеты">
-            <img class="example__image" width="320" height="240" src="img/after-mobile@1x.png" alt="Борис после диеты">
-            <p class="example__before-after">Было</p>
-            <span class="example__toggle"></span>
-            <p class="example__before-after">Стало</p>
+          <div class="example__slider slider">
+            <div class="slider__slides">
+              <div class="slider__container-one">
+                <!-- <img class="slider__image slider__image--active slider__image--centering" width="320" height="240" src="img/before-mobile@1x.png" alt="Борис до диеты"> -->
+                <img class="slider__image slider__image--centering" width="690" height="517" src="img/after-desktop@1x.png" alt="Борис до диеты">
+              </div>
+              <div class="slider__container-two">
+                <!-- <img class="slider__image" width="320" height="240" src="img/after-mobile@1x.png" alt="Борис после диеты"> -->
+                <img class="slider__image" width="690" height="517" src="img/before-desktop@1x.png" alt="Борис после диеты">
+              </div>
+            </div>
+            <div class="slider__toggle-wrapper">
+              <p class="slider__prev">Было</p>
+              <div class="slider__line">
+                <span class="slider__toggle"></span>
+              </div>
+              <p class="slider__next">Стало</p>
+            </div>
           </div>
         </div>
       </section>
@@ -183,5 +195,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="../js/app.js" type="module"></script>
   </body>
 </html>
