@@ -117,6 +117,7 @@
 
   .additional__item {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     padding: 25px 0;
   }
@@ -153,5 +154,59 @@
     top: 0;
     left: 0;
     margin-left: 0;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .additional-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .additional__list {
+    width: 895px;
+  }
+
+  .additional__gift {
+    width: 245px;
+    height: 290px;
+
+    background: url("../img/gift-photo-desktop@1x.jpg") no-repeat 0 0;
+  }
+
+  .additional__gift-description {
+    padding-left: 0;
+    padding-top: 115px;
+    text-align: center;
+  }
+
+  .additional__gift-description::before {
+    top: 0;
+    left: 50%;
+    margin-left: -28px;
+  }
+
+  .additional__item {
+    padding: 15px 0;
+  }
+
+  .additional__button {
+    width: 245px;
+    padding: 12px 0 9px 0;
+
+    font-size: 16px;
+  }
+
+  .additional__name {
+    margin-bottom: 0;
+  }
+
+  .additional__description {
+    margin-bottom: 0;
+    margin-right: 40px;
+  }
+
+  .additional__title {
+    width: 895px;
   }
 }
