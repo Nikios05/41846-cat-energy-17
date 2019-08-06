@@ -19,9 +19,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 280px;
   margin: 0 auto;
-  margin-bottom: 25px;
+  padding: 30px 20px 25px;
+  background-color: @light-gray;
+}
+
+.address__wrapper--white {
+  background-color: #ffffff;
 }
 
 .address__map {
@@ -33,7 +37,7 @@
 
 @media (min-width: @table-width) {
   .address__wrapper {
-    width: 630px;
+    padding: 70px 70px 60px;
   }
 
   .address__invite {
@@ -62,6 +66,7 @@
 
   .address__wrapper {
     position: absolute;
+    padding: 0;
     top: 95px;
     left: 110px;
     justify-content: space-around;
