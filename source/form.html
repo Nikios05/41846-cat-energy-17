@@ -10,7 +10,7 @@
 
     <header class="page-header">
       <div class="page-header__wrapper">
-        <a class="logo page-header__logo" href="#">
+        <a class="logo page-header__logo" href="index.html">
           <img class="logo-image page-header__logo--ml" src="img/logo-mobile.svg" width="191" height="38" alt="Кэт энерджи">
         </a>
         <nav class="main-nav">
@@ -33,7 +33,7 @@
     <main class="page-main">
         <h1 class="page-main__title title title--size-l">Подбор программы</h1>
 
-        <form class="form page-main__form" action="" method="POST">
+        <form class="form" action="" method="POST">
           <h2 class="form__title">Заполните анкету и мы подберем<br> программу питания для вашего кота</h2>
 
           <div class="form__container">
@@ -62,37 +62,37 @@
             <fieldset class="form__type">
               <legend class="visually-hidden">Тип программы</legend>
               <p class="form__item">
-                <label class="form__label form__label--radio">
-                  <input class="form__radio" type="radio"  value="weight-loss" name="program-type" checked>
+                <input class="form__radio visually-hidden" id="weight-loss" type="radio"  value="weight-loss" name="program-type" checked>
+                <label class="form__label form__label--radio" for="weight-loss">
                   Похудение
                 </label>
               </p>
               <p class="form__item">
-                <label class="form__label form__label--radio">
-                  <input class="form__radio" type="radio" value="weight-gain" name="program-type">
+                <input class="form__radio visually-hidden" id="weight-gain" type="radio" value="weight-gain" name="program-type">
+                <label class="form__label form__label--radio" for="weight-gain">
                   Набор массы
                 </label>
               </p>
               <p class="form__item">
-                <label class="form__label form__label--radio">
-                  <input class="form__radio" type="radio" value="not-know" name="program-type">
+                <input class="form__radio visually-hidden" id="not-know" type="radio" value="not-know" name="program-type">
+                <label class="form__label form__label--radio" for="not-know">
                   Не знаю (нужен ваш совет)
                 </label>
               </p>
             </fieldset>
           </div>
 
-          <fieldset class="form__contact">
-            <legend class="form__subtitle title title--size-m">Контактные данные (владельца кота)</legend>
+          <fieldset class="form__contact form--line form--line-t">
+            <legend class="form__subtitle title title--size-m">Контактные данные<br> (владельца кота)</legend>
             <div class="form__container">
               <p class="form__item">
-                <label class="form__label">
+                <label class="form__label form__label--email">
                   e-mail:*
                   <input class="form__text" type="email" name="e-mail" placeholder="kuklachev@gmail.com">
                 </label>
               </p>
               <p class="form__item">
-                <label class="form__label">
+                <label class="form__label form__label--tel">
                   Телефон:*
                   <input class="form__text" type="tel" name="telephone"  placeholder="8 (960) 900-60-90">
                 </label>
@@ -100,36 +100,36 @@
             </div>
           </fieldset>
 
-          <fieldset class="form__comment">
+          <fieldset class="form__comment form--line">
             <legend class="form__subtitle title title--size-m">Комментарий</legend>
-            <p class="form__item">
+            <p class="form__item form__container">
               <textarea class="form__text-area" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
             </p>
           </fieldset>
 
-          <fieldset class="form__add">
+          <fieldset class="form__add form--line">
             <legend class="form__subtitle title title--size-m">Дополнительно</legend>
             <p class="form__item">
-              <label class="form__label">
-                <input class="form__checkbox" type="checkbox"  value="sweetener" name="additional" checked>
+              <input class="form__checkbox visually-hidden" id="sweetener" type="checkbox"  value="sweetener" name="additional" checked>
+              <label class="form__label form__label--checkbox" for="sweetener">
                 Сахарозаменитель
               </label>
             </p>
             <p class="form__item">
-              <label class="form__label">
-                <input class="form__checkbox" type="checkbox" value="water" name="additional">
+              <input class="form__checkbox visually-hidden" id="water" type="checkbox" value="water" name="additional">
+              <label class="form__label form__label--checkbox" for="water">
                 Питьевая вода
               </label>
             </p>
             <p class="form__item">
-              <label class="form__label">
-                <input class="form__checkbox" type="checkbox" value="milk" name="additional">
+              <input class="form__checkbox visually-hidden" id="milk" type="checkbox" value="milk" name="additional">
+              <label class="form__label form__label--checkbox" for="milk">
                 Молоко
               </label>
             </p>
             <p class="form__item">
-              <label class="form__label">
-                <input class="form__checkbox" type="checkbox" value="vitamins" name="additional">
+              <input class="form__checkbox visually-hidden" id="vitamins" type="checkbox" value="vitamins" name="additional">
+              <label class="form__label form__label--checkbox" for="vitamins">
                 Витамины
               </label>
             </p>
