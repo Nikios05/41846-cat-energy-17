@@ -1,8 +1,8 @@
 "use strict";
 
-var menu = document.querySelector(".site-list"),
-    item = document.querySelectorAll(".site-list__item"),
-    btnOpen = document.querySelector(".main-nav__toggle");
+var menu = document.querySelector(".site-list");
+var item = document.querySelectorAll(".site-list__item");
+var btnOpen = document.querySelector(".main-nav__toggle");
 btnOpen.addEventListener("click", function () {
   console.log("ok");
   btnOpen.classList.toggle("main-nav__toggle--close");
@@ -14,17 +14,17 @@ btnOpen.addEventListener("click", function () {
 "use strict";
 
 //Контейнеры с ихображениями и центровщик контента
-var containerTwo = document.querySelector(".slider__container-two"),
-    containerOne = document.querySelector(".slider__container-one"),
-    image = document.querySelector(".slider__image--centering"); // Ползунок/переключатель
+var containerTwo = document.querySelector(".slider__container-two");
+var containerOne = document.querySelector(".slider__container-one");
+var image = document.querySelector(".slider__image--centering"); // Ползунок/переключатель
 
-var circle = document.querySelector(".slider__toggle"),
-    line = document.querySelector(".slider__line"); // Разрешения экранов
+var circle = document.querySelector(".slider__toggle");
+var line = document.querySelector(".slider__line"); // Разрешения экранов
 
-var mobileWidth = 320,
-    tableWidth = 768,
-    desktopWidth = 1220,
-    browser = document.body.clientWidth; //Слайдер для мобильной версии
+var mobileWidth = 320;
+var tableWidth = 768;
+var desktopWidth = 1220;
+var browser = document.body.clientWidth; //Слайдер для мобильной версии
 
 if (browser >= mobileWidth && browser < tableWidth) {
   var imageWrapper = document.querySelector(".slider__slides");
@@ -43,8 +43,8 @@ function changeStyle(rangeValue) {
   containerOne.style.transform = "translateX(".concat(image.offsetWidth - indexWidth, "px)");
   containerTwo.style.width = "".concat(image.offsetWidth - indexWidth, "px"); //Изменение фона
 
-  var bgSlider = document.querySelector(".example"),
-      bgWidthOffset = (circle.getBoundingClientRect().right - circle.clientWidth / 2) / browser * 100;
+  var bgSlider = document.querySelector(".example");
+  var bgWidthOffset = (circle.getBoundingClientRect().right - circle.clientWidth / 2) / browser * 100;
   var coefficient = rangeValue * 0.00106 + 0.78;
   bgSlider.style.backgroundImage = "linear-gradient(#ffffff 190px, transparent 190px, transparent 100%),\nlinear-gradient(90deg, transparent 0%, transparent ".concat(bgWidthOffset * coefficient, "%, #eaeaea ").concat(bgWidthOffset * coefficient, "%, #eaeaea 100%)");
 } //Слайдер для десктопной версии

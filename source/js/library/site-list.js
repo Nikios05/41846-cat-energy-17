@@ -1,7 +1,7 @@
 
-  let menu = document.querySelector(".site-list"),
-      item = document.querySelectorAll(".site-list__item"),
-      btnOpen = document.querySelector(".main-nav__toggle");
+  const menu = document.querySelector(".site-list");
+  const item = document.querySelectorAll(".site-list__item");
+  const btnOpen = document.querySelector(".main-nav__toggle");
 
   btnOpen.addEventListener("click", () => {
     console.log("ok");

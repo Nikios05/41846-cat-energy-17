@@ -1,22 +1,22 @@
 
 //Контейнеры с ихображениями и центровщик контента
-let containerTwo =  document.querySelector(".slider__container-two"),
-containerOne =  document.querySelector(".slider__container-one"),
-image = document.querySelector(".slider__image--centering");
+const containerTwo =  document.querySelector(".slider__container-two");
+const containerOne =  document.querySelector(".slider__container-one");
+const image = document.querySelector(".slider__image--centering");
 
 // Ползунок/переключатель
-let circle = document.querySelector(".slider__toggle"),
-line = document.querySelector(".slider__line");
+const circle = document.querySelector(".slider__toggle");
+const line = document.querySelector(".slider__line");
 
 // Разрешения экранов
-let mobileWidth = 320,
-tableWidth = 768,
-desktopWidth = 1220,
-browser = document.body.clientWidth;
+let mobileWidth = 320;
+let tableWidth = 768;
+let desktopWidth = 1220;
+let browser = document.body.clientWidth;
 
 //Слайдер для мобильной версии
 if (browser >= mobileWidth && browser < tableWidth) {
-let imageWrapper =  document.querySelector(".slider__slides");
+const imageWrapper =  document.querySelector(".slider__slides");
 line.addEventListener("click", (e) => {
 circle.classList.toggle("toggle--on")
 imageWrapper.classList.toggle("image-wrapper--move")
@@ -33,8 +33,8 @@ containerOne.style.transform = `translateX(${image.offsetWidth - indexWidth}px)`
 containerTwo.style.width = `${image.offsetWidth - indexWidth}px`;
 
 //Изменение фона
-let bgSlider = document.querySelector(".example"),
-  bgWidthOffset = (circle.getBoundingClientRect().right-circle.clientWidth/2)/browser*100;
+const bgSlider = document.querySelector(".example");
+let bgWidthOffset = (circle.getBoundingClientRect().right-circle.clientWidth/2)/browser*100;
 let coefficient = rangeValue*0.00106 + 0.78;
 bgSlider.style.backgroundImage = `linear-gradient(#ffffff 190px, transparent 190px, transparent 100%),
 linear-gradient(90deg, transparent 0%, transparent ${bgWidthOffset*coefficient}%, #eaeaea ${bgWidthOffset*coefficient}%, #eaeaea 100%)`;
