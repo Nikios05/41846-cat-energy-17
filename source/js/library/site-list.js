@@ -1,4 +1,4 @@
-export function siteList() {
+
   let menu = document.querySelector(".site-list"),
       item = document.querySelectorAll(".site-list__item"),
       btnOpen = document.querySelector(".main-nav__toggle");
@@ -11,4 +11,3 @@ export function siteList() {
       i.classList.toggle("site-list__item--on");
     });
   });
-};
