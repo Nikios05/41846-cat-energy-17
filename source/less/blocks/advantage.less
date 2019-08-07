@@ -3,9 +3,9 @@
 }
 
 .advantage__list {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-
+  width: 280px;
   list-style: none;
 }
 
@@ -66,6 +66,15 @@
 }
 
 @media (min-width: @table-width) {
+  .advantage {
+    padding-bottom: 105px;
+    border-bottom: 1px solid @line-gray;
+  }
+
+  .advantage--mb {
+    margin-bottom: 45px;
+  }
+
   .advantage__title {
     margin-bottom: 60px;
   }
@@ -74,13 +83,20 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 708px;
   }
+
 
   .advantage__item {
     margin-bottom: 135px;
     padding-top: 115px;
     padding-left: 0;
     width: 245px;
+  }
+
+  .advantage__item:nth-child(3),
+  .advantage__item:nth-child(4) {
+    margin-bottom: 0;
   }
 
   .advantage__description {

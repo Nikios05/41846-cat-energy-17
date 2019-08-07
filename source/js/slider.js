@@ -24,8 +24,27 @@ export function slider() {
     })
   }
 
+  //Изменение стилей
+  function changeStyle(rangeValue) {
+    circle.style.transform = `translateX(${rangeValue}px)`;
+    let indexWidth = rangeValue*image.offsetWidth/line.offsetWidth;
+    image.style.transform = `translateX(-${image.offsetWidth - indexWidth}px)`;
+    containerOne.style.width =  indexWidth + "px";
+    containerOne.style.transform = `translateX(${image.offsetWidth - indexWidth}px)`;
+    containerTwo.style.width = `${image.offsetWidth - indexWidth}px`;
+
+    //Изменение фона
+    let bgSlider = document.querySelector(".example"),
+        bgWidthOffset = (circle.getBoundingClientRect().right-circle.clientWidth/2)/browser*100;
+    let coefficient = rangeValue*0.00106 + 0.78;
+    bgSlider.style.backgroundImage = `linear-gradient(#ffffff 190px, transparent 190px, transparent 100%),
+    linear-gradient(90deg, transparent 0%, transparent ${bgWidthOffset*coefficient}%, #eaeaea ${bgWidthOffset*coefficient}%, #eaeaea 100%)`;
+  }
+
   //Слайдер для десктопной версии
   if (browser >= desktopWidth) {
+    changeStyle(205);
+
     circle.onmousedown = (e) => {
       e.preventDefault();
 
@@ -41,14 +60,7 @@ export function slider() {
             left = line.getBoundingClientRect().left;
         let range = pageX - left;
         if (range >= 0  && range <= (right-left)) {
-          circle.style.transform = "translateX(" + range + "px)";
-
-          let indexWidth = range*image.offsetWidth/line.offsetWidth;
-
-          image.style.transform = "translateX(-" + (image.offsetWidth - indexWidth) + "px)";
-          containerOne.style.width =  indexWidth + "px";
-          containerOne.style.transform = "translateX(" + (image.offsetWidth - indexWidth) + "px)";
-          containerTwo.style.width = image.offsetWidth - indexWidth + "px";
+          changeStyle(range);
         };
       };
 

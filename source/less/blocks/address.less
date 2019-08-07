@@ -29,10 +29,25 @@
 }
 
 .address__map {
+  position: relative;
   margin: 0;
   padding: 0;
 
   background-color: @light-gray;
+}
+
+.address__map--pin::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -53px;
+  margin-left: -67px;
+
+  width: 124px;
+  height: 106px;
+
+  background: url("../img/map-pin.png") no-repeat 0 0;
 }
 
 @media (min-width: @table-width) {
