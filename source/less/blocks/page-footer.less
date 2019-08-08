@@ -1,6 +1,5 @@
 .page-footer {
   padding-bottom: 20px;
-  margin-top: 30px;
 
   background-color: @light-gray;
 }
@@ -17,6 +16,7 @@
 .page-footer__logo {
   margin: 0 auto;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .page-footer__social {
@@ -46,5 +46,11 @@
 
   .page-footer__copyright {
     margin: 0;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page-footer {
+    margin-top: 0;
   }
 }

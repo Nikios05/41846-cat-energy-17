@@ -11,6 +11,10 @@
   border-bottom: 1px solid @line-gray;
 }
 
+.catalog__item:first-child {
+  border-top: 1px solid @line-gray;
+}
+
 .catalog__more {
   width: 280px;
   margin: 0 auto;
@@ -69,7 +73,7 @@
 
   .catalog__item:last-child {
     background-color: transparent;
-    border: 1px solid @line-gray;
+    outline: 1px solid @line-gray;
   }
 
   .catalog__button {
@@ -114,5 +118,9 @@
 
   .catalog__button {
     width: 170px;
+  }
+
+  .catalog__more {
+    width: 245px;
   }
 }

@@ -10,7 +10,7 @@
 
     <header class="page-header">
       <div class="page-header__wrapper">
-        <a class="logo logo--full page-header__logo" href="#">
+        <a class="logo page-header__logo">
           <img class="logo-image page-header__logo--ml" src="img/logo-mobile.svg" width="191" height="38" alt="Кэт энерджи">
         </a>
         <nav class="main-nav page-header__nav">
@@ -35,10 +35,10 @@
       <h1 class="visually-hidden">Кэт энерджи: главная страница</h1>
 
       <section class="product-banner product-banner--bg-img page-main__product-banner">
-          <h2 class="product-banner__title title title--size-l">Функциональное питание для котов</h2>
-          <p class="product-banner__tagline">Занялся собой? Займись котом!</p>
-          <img class="product-banner__image" width="280" height="271" src="img/index-can-mobile@1x.png" alt="Кэт энерджи с курицей">
-          <a class="product-banner__button button button--green" href="form.html">Подобрать программу</a>
+        <h2 class="product-banner__title title title--size-l">Функциональное питание для котов</h2>
+        <p class="product-banner__tagline">Занялся собой? Займись котом!</p>
+        <img class="product-banner__image" width="280" height="271" src="img/index-can-mobile@1x.png" alt="Кэт энерджи с курицей">
+        <a class="product-banner__button button button--green" href="form.html">Подобрать программу</a>
       </section>
 
       <section class="programs programs--mb page-main__container">
@@ -58,8 +58,8 @@
           </ul>
       </section>
 
-      <section class="advantage advantage--mb page-main__container">
-          <h2 class="advantage__title title title--size-l">Как это работает</h2>
+      <section class="advantage advantage--mb">
+          <h2 class="advantage__title title title--size-l page-main__container">Как это работает</h2>
           <ul class="advantage__list">
             <li class="advantage__item advantage__item--number">
               <p class="advantage__description advantage__description--leaf">
@@ -85,31 +85,45 @@
       </section>
 
       <section class="example">
-        <div class="page-main__container">
-          <h2 class="example__title title title--size-l">Живой пример</h2>
-          <p class="example__description">
-            Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
-          </p>
-          <ul class="example__list">
-            <li class="example__item">
-              <b class="example__value">5 кг</b>
-              <p class="example__index">снижение веса</p>
-            </li>
-            <li class="example__item">
-              <b class="example__value">60 дней</b>
-              <p class="example__index">затрачено времени</p>
-            </li>
-          </ul>
-          <h3 class="example__subtitle">Затраты на питание: 15 000 руб</h3>
-        </div>
-        <div class="example__wrapper">
-          <img class="example__image example__image--active" width="320" height="240" src="img/before-mobile@1x.png" alt="Борис до диеты">
-          <img class="example__image" width="320" height="240" src="img/after-mobile@1x.png" alt="Борис после диеты">
-        </div>
-        <div class="example__wrapper page-main__container">
-          <p class="example__before-after">Было</p>
-          <span class="example__toggle"></span>
-          <p class="example__before-after">Стало</p>
+        <div class="example__container">
+          <div class="example__description">
+            <h2 class="example__title title title--size-l">Живой пример</h2>
+            <p class="example__text">
+              Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
+            </p>
+            <div class="example__wrapper">
+              <ul class="example__list">
+                <li class="example__item">
+                  <b class="example__value">5 кг</b>
+                  <p class="example__index">снижение веса</p>
+                </li>
+                <li class="example__item">
+                  <b class="example__value">60 дней</b>
+                  <p class="example__index">затрачено времени</p>
+                </li>
+              </ul>
+              <b class="example__subtitle">Затраты на питание: <span>15 000 руб.</span></b>
+            </div>
+          </div>
+          <div class="example__slider slider">
+            <div class="slider__slides">
+              <div class="slider__container-one">
+                <!-- <img class="slider__image slider__image--active slider__image--centering" width="320" height="240" src="img/before-mobile@1x.png" alt="Борис до диеты"> -->
+                <img class="slider__image slider__image--centering" width="690" height="517" src="img/after-desktop@1x.png" alt="Борис до диеты">
+              </div>
+              <div class="slider__container-two">
+                <!-- <img class="slider__image" width="320" height="240" src="img/after-mobile@1x.png" alt="Борис после диеты"> -->
+                <img class="slider__image" width="690" height="517" src="img/before-desktop@1x.png" alt="Борис после диеты">
+              </div>
+            </div>
+            <div class="slider__toggle-wrapper">
+              <p class="slider__prev">Было</p>
+              <div class="slider__line">
+                <span class="slider__toggle"></span>
+              </div>
+              <p class="slider__next">Стало</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -117,16 +131,16 @@
 
     <footer class="page-footer">
       <div class="page-footer__address address">
-        <div class="address__wrapper">
+        <div class="address__wrapper address__wrapper--white">
           <p class="address__invite">Приглашаем<br> к сотрудничеству дилеров!</p>
-          <p class="address__text">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
+          <p class="address__text">ул. Большая Конюшенная, д. 19/8 <span>Санкт-Петербург</span></p>
         </div>
         <p class="address__map address__map--pin">
           <img class="address__map-image" src="img/bg-map-mobile@1x.png" width="320" height="400" alt="Офис компании по адресу ул. Большая Конюшенная, д. 19/8 Санкт-Петербург">
         </p>
       </div>
       <div class="page-footer__container">
-        <a class="logo logo--short page-footer__logo" href="#">
+        <a class="logo page-footer__logo" href="#">
           <img class="logo-image" src="img/logo-footer.svg" width="128" height="24" alt="Кэт энерджи">
         </a>
         <ul class="social-list page-footer__social">
@@ -181,5 +195,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="js/app.js"></script>
   </body>
 </html>
