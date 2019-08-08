@@ -33,7 +33,7 @@
     <main class="page-main">
         <h1 class="page-main__title title title--size-l">Подбор программы</h1>
 
-        <form class="form" action="" method="POST">
+        <form class="form page-main__form" action="" method="POST">
           <h2 class="form__title">Заполните анкету и мы подберем<br> программу питания для вашего кота</h2>
 
           <div class="form__container">
@@ -109,34 +109,36 @@
 
           <fieldset class="form__add form--line">
             <legend class="form__subtitle title title--size-m">Дополнительно</legend>
-            <p class="form__item">
-              <input class="form__checkbox visually-hidden" id="sweetener" type="checkbox"  value="sweetener" name="additional" checked>
-              <label class="form__label form__label--checkbox" for="sweetener">
-                Сахарозаменитель
-              </label>
-            </p>
-            <p class="form__item">
-              <input class="form__checkbox visually-hidden" id="water" type="checkbox" value="water" name="additional">
-              <label class="form__label form__label--checkbox" for="water">
-                Питьевая вода
-              </label>
-            </p>
-            <p class="form__item">
-              <input class="form__checkbox visually-hidden" id="milk" type="checkbox" value="milk" name="additional">
-              <label class="form__label form__label--checkbox" for="milk">
-                Молоко
-              </label>
-            </p>
-            <p class="form__item">
-              <input class="form__checkbox visually-hidden" id="vitamins" type="checkbox" value="vitamins" name="additional">
-              <label class="form__label form__label--checkbox" for="vitamins">
-                Витамины
-              </label>
-            </p>
+            <div class="form__wrapper">
+              <p class="form__item">
+                <input class="form__checkbox visually-hidden" id="sweetener" type="checkbox"  value="sweetener" name="additional" checked>
+                <label class="form__label form__label--checkbox" for="sweetener">
+                  Сахарозаменитель
+                </label>
+              </p>
+              <p class="form__item">
+                <input class="form__checkbox visually-hidden" id="water" type="checkbox" value="water" name="additional">
+                <label class="form__label form__label--checkbox" for="water">
+                  Питьевая вода
+                </label>
+              </p>
+              <p class="form__item">
+                <input class="form__checkbox visually-hidden" id="milk" type="checkbox" value="milk" name="additional">
+                <label class="form__label form__label--checkbox" for="milk">
+                  Молоко
+                </label>
+              </p>
+              <p class="form__item">
+                <input class="form__checkbox visually-hidden" id="vitamins" type="checkbox" value="vitamins" name="additional">
+                <label class="form__label form__label--checkbox" for="vitamins">
+                  Витамины
+                </label>
+              </p>
+            </div>
           </fieldset>
           <div class="form__wrapper">
             <button class="form__submit button button--green" type="submit">Отправить заявку</button>
-            <i class="form__explanation">* — Обязательные поля</i>
+            <p class="form__explanation">* — Обязательные поля</p>
           </div>
         </form>
     </main>
