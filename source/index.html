@@ -11,7 +11,11 @@
     <header class="page-header">
       <div class="page-header__wrapper">
         <a class="logo page-header__logo">
-          <img class="logo-image page-header__logo--ml" src="img/logo-mobile.svg" width="191" height="38" alt="Кэт энерджи">
+          <picture>
+            <source media="(min-width: 1220px)" srcset="img/logo-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+            <img class="logo-image page-header__logo--ml" src="img/logo-mobile.svg" width="191" height="38" alt="Кэт энерджи">
+          </picture>
         </a>
         <nav class="main-nav page-header__nav">
           <button class="main-nav__toggle main-nav__toggle--open" type="button">Открыть меню</button>
@@ -37,7 +41,11 @@
       <section class="product-banner product-banner--bg-img page-main__product-banner">
         <h2 class="product-banner__title title title--size-l">Функциональное питание для котов</h2>
         <p class="product-banner__tagline">Занялся собой? Займись котом!</p>
-        <img class="product-banner__image" width="280" height="271" src="img/index-can-mobile@1x.png" alt="Кэт энерджи с курицей">
+        <picture>
+          <source media="(min-width: 1220px)"  srcset="img/index-can-desktop@1x.png 1x, img/index-can-desktop@2x.png 2x">
+          <source media="(min-width: 768px)"  srcset="img/index-can-tablet@1x.jpg 1x, img/index-can-tablet@2x.jpg 2x">
+          <img class="product-banner__image" width="280" height="271" src="img/index-can-mobile@1x.png" srcset="img/index-can-mobile@2x.png 2x" alt="Кэт энерджи с курицей">
+        </picture>
         <a class="product-banner__button button button--green" href="form.html">Подобрать программу</a>
       </section>
 
@@ -108,12 +116,18 @@
           <div class="example__slider slider">
             <div class="slider__slides">
               <div class="slider__container-one">
-                <!-- <img class="slider__image slider__image--active slider__image--centering" width="320" height="240" src="img/before-mobile@1x.png" alt="Борис до диеты"> -->
-                <img class="slider__image slider__image--centering" width="690" height="517" src="img/after-desktop@1x.png" alt="Борис до диеты">
+                <picture>
+                  <source media="(min-width: 1220px)" srcset="img/after-desktop@1x.png 1x, img/after-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)" srcset="img/after-tablet@1x.png 1x, img/after-tablet@2x.png 2x">
+                  <img class="slider__image slider__image--centering" width="320" height="240" src="img/before-mobile@1x.png"  alt="Борис до диеты">
+                </picture>
               </div>
               <div class="slider__container-two">
-                <!-- <img class="slider__image" width="320" height="240" src="img/after-mobile@1x.png" alt="Борис после диеты"> -->
-                <img class="slider__image" width="690" height="517" src="img/before-desktop@1x.png" alt="Борис после диеты">
+                <picture>
+                  <source media="(min-width: 1220px)" srcset="img/before-desktop@1x.png 1x, img/before-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)" srcset="img/before-tablet@1x.png 1x, img/before-tablet@2x.png 2x">
+                  <img class="slider__image" width="320" height="240" src="img/after-mobile@1x.png"  alt="Борис после диеты">
+                </picture>
               </div>
             </div>
             <div class="slider__toggle-wrapper">
@@ -136,7 +150,11 @@
           <p class="address__text">ул. Большая Конюшенная, д. 19/8 <span>Санкт-Петербург</span></p>
         </div>
         <p class="address__map address__map--pin">
-          <img class="address__map-image" src="img/bg-map-mobile@1x.png" width="320" height="400" alt="Офис компании по адресу ул. Большая Конюшенная, д. 19/8 Санкт-Петербург">
+          <picture>
+              <source media="(min-width: 1220px)" srcset="img/bg-map-desktop@1x.png 1x, img/bg-map-desktop@2x.png 2x">
+              <source media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.png 1x, img/bg-map-tablet@2x.png 2x">
+            <img class="address__map-image" src="img/bg-map-mobile@1x.png" srcset="img/bg-map-mobile@2x.png 2x" width="320" height="400" alt="Офис компании по адресу ул. Большая Конюшенная, д. 19/8 Санкт-Петербург">
+          </picture>
         </p>
       </div>
       <div class="page-footer__container">

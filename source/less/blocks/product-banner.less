@@ -26,6 +26,8 @@
 
 .product-banner__image {
   display: block;
+  width: 280px;
+  height: 271px;
   margin: 0 auto;
 }
 
@@ -44,8 +46,16 @@
 
   width: 100%;
   height: 305px;
-  background: @bg-product url("../img/index-background-mobile@1x.jpg") no-repeat 50% 50%;
+  background-color: @bg-product;
+  background-image: url("../img/index-background-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   z-index: -1;
+
+  @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+    background-image: url("../img/index-background-mobile@2x.jpg");
+    background-size: 320px auto;
+  }
 }
 
 @media (min-width: @table-width) {
@@ -55,9 +65,11 @@
 
   .product-banner__image {
     position: absolute;
-    top: 320px;
-    left: 50px;
+    top: 340px;
+    left: 60px;
     right: 50px;
+    width: 709px;
+    height: 609px;
     z-index: -1;
   }
 
@@ -104,8 +116,10 @@
   }
 
   .product-banner__image {
-    top: 140px;
+    top: 100px;
     left: 290px;
+    width: 552px;
+    height: 500px;
   }
 
   .product-banner::before {
@@ -117,7 +131,15 @@
     width: 50vw;
     height: 696px;
 
-    background: @bg-product url("../img/index-background-desktop@1x.jpg") no-repeat 50% 50%;
+    background-color: @bg-product;
+    background-image: url("../img/index-background-desktop@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
     background-size: cover;
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/index-background-desktop@2x.jpg");
+      background-size: 720px auto;
+    }
   }
 }

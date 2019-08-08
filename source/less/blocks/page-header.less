@@ -12,6 +12,12 @@
   border-bottom: 1px solid @line-gray;
 }
 
+.page-header__logo img {
+  display: block;
+  width: 191px;
+  height: 38px;
+}
+
 @media (max-width: @table-width - 1) {
   .page-header__logo--ml {
     margin-left: 20px;
@@ -29,10 +35,15 @@
   }
 
   .page-header__logo {
-    padding-bottom: 0;
+    padding: 0;
     margin-top: 0;
     width: 200px;
     border: none;
+  }
+
+  .page-header__logo img {
+    width: 173px;
+    height: 58px;
   }
 }
 
@@ -46,5 +57,10 @@
 
   .page-header {
     background-color: transparent;
+  }
+
+  .page-header__logo img {
+    width: 202px;
+    height: 60px;
   }
 }
