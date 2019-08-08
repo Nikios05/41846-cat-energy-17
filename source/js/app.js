@@ -32,11 +32,12 @@ if (browser >= mobileWidth && browser < tableWidth) {
     circle.classList.toggle("toggle--on");
     imageWrapper.classList.toggle("image-wrapper--move");
   });
-} //Изменение стилей
+}
 
+; //Изменение стилей
 
-function changeStyle(rangeValue) {
-  circle.style.transform = "translateX(".concat(rangeValue, "px)");
+function changeStyle(rangeValue, fixTab) {
+  circle.style.transform = "translateX(".concat(rangeValue + fixTab, "px)");
   var indexWidth = rangeValue * image.offsetWidth / line.offsetWidth;
   image.style.transform = "translateX(-".concat(image.offsetWidth - indexWidth, "px)");
   containerOne.style.width = indexWidth + "px";
@@ -45,14 +46,39 @@ function changeStyle(rangeValue) {
 
   var bgSlider = document.querySelector(".example");
   var bgWidthOffset = (circle.getBoundingClientRect().right - circle.clientWidth / 2) / browser * 100;
-  var coefficient = rangeValue * 0.00106 + 0.78;
-  bgSlider.style.backgroundImage = "linear-gradient(#ffffff 190px, transparent 190px, transparent 100%),\n  linear-gradient(90deg, transparent 0%, transparent ".concat(bgWidthOffset * coefficient, "%, #eaeaea ").concat(bgWidthOffset * coefficient, "%, #eaeaea 100%)");
-  console.log(line.offsetWidth);
-} //Слайдер для десктопной версии
+  var coefficient = rangeValue * 0.00106 + 0.78; //фикс для широких экранов
 
+  if (rangeValue > 425) {
+    coefficient = 100;
+  }
+
+  if (browser >= desktopWidth) {
+    bgSlider.style.backgroundImage = "linear-gradient(#ffffff 190px, transparent 190px, transparent 100%),\n    linear-gradient(90deg, transparent 0%, transparent ".concat(bgWidthOffset * coefficient, "%, #eaeaea ").concat(bgWidthOffset * coefficient, "%, #eaeaea 100%)");
+  }
+
+  if (browser >= tableWidth && browser < desktopWidth) {
+    bgSlider.style.backgroundImage = "linear-gradient(#ffffff 575px, transparent 575px, transparent 100%),\n    linear-gradient(90deg, transparent 0%, transparent ".concat(bgWidthOffset * coefficient, "%, #eaeaea ").concat(bgWidthOffset * coefficient, "%, #eaeaea 100%)");
+  }
+} //Начальное состояние
+//Функция изминения
+
+
+function moveAt(pageX) {
+  var right = line.getBoundingClientRect().right,
+      left = line.getBoundingClientRect().left;
+  var range = pageX - left;
+
+  if (range >= 0 && range <= right - left) {
+    changeStyle(range);
+  }
+
+  ;
+}
+
+; //Слайдер для десктопной версии
 
 if (browser >= desktopWidth) {
-  changeStyle(205);
+  changeStyle(205, 0);
 
   circle.onmousedown = function (e) {
     e.preventDefault();
@@ -60,21 +86,7 @@ if (browser >= desktopWidth) {
     document.addEventListener("mouseup", onMouseUp);
 
     function onMouseMove(e) {
-      moveAt(e.pageX);
-    }
-
-    ;
-
-    function moveAt(pageX) {
-      var right = line.getBoundingClientRect().right,
-          left = line.getBoundingClientRect().left;
-      var range = pageX - left;
-
-      if (range >= 0 && range <= right - left) {
-        changeStyle(range);
-      }
-
-      ;
+      moveAt(e.pageX, 0);
     }
 
     ;
@@ -82,6 +94,32 @@ if (browser >= desktopWidth) {
     function onMouseUp() {
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseup", onMouseUp);
+    }
+
+    circle.ondragstart = function () {
+      return false;
+    };
+  };
+} //Слайдер для таб версии
+
+
+if (browser >= tableWidth && browser < desktopWidth) {
+  changeStyle(205, 30);
+
+  circle.ontouchstart = function (e) {
+    e.preventDefault();
+    document.addEventListener("touchmove", touchMove);
+    document.addEventListener("touchend", touchEnd);
+
+    function touchMove(e) {
+      moveAt(e.changedTouches[0].pageX, 30);
+    }
+
+    ;
+
+    function touchEnd() {
+      document.removeEventListener("touchmove", touchMove);
+      document.removeEventListener("touchend", touchEnd);
     }
 
     circle.ondragstart = function () {
