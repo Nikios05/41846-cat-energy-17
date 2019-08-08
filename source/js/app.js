@@ -37,8 +37,8 @@ if (browser >= mobileWidth && browser < tableWidth) {
 ; //Изменение стилей
 
 function changeStyle(rangeValue, fixTab) {
-  circle.style.transform = "translateX(".concat(rangeValue + fixTab, "px)");
-  var indexWidth = rangeValue * image.offsetWidth / line.offsetWidth;
+  circle.style.transform = "translateX(".concat(rangeValue, "px)");
+  var indexWidth = rangeValue * image.offsetWidth / line.offsetWidth + fixTab;
   image.style.transform = "translateX(-".concat(image.offsetWidth - indexWidth, "px)");
   containerOne.style.width = indexWidth + "px";
   containerOne.style.transform = "translateX(".concat(image.offsetWidth - indexWidth, "px)");
@@ -48,7 +48,7 @@ function changeStyle(rangeValue, fixTab) {
   var bgWidthOffset = (circle.getBoundingClientRect().right - circle.clientWidth / 2) / browser * 100;
   var coefficient = rangeValue * 0.00106 + 0.78; //фикс для широких экранов
 
-  if (rangeValue > 425) {
+  if (rangeValue > line.offsetWidth - 5) {
     coefficient = 100;
   }
 
@@ -57,19 +57,24 @@ function changeStyle(rangeValue, fixTab) {
   }
 
   if (browser >= tableWidth && browser < desktopWidth) {
+    if (rangeValue < line.offsetWidth - (line.offsetWidth - 5)) {
+      coefficient = 0;
+    }
+
+    ;
     bgSlider.style.backgroundImage = "linear-gradient(#ffffff 575px, transparent 575px, transparent 100%),\n    linear-gradient(90deg, transparent 0%, transparent ".concat(bgWidthOffset * coefficient, "%, #eaeaea ").concat(bgWidthOffset * coefficient, "%, #eaeaea 100%)");
   }
 } //Начальное состояние
 //Функция изминения
 
 
-function moveAt(pageX) {
+function moveAt(pageX, fixTab) {
   var right = line.getBoundingClientRect().right,
       left = line.getBoundingClientRect().left;
   var range = pageX - left;
 
   if (range >= 0 && range <= right - left) {
-    changeStyle(range);
+    changeStyle(range, fixTab);
   }
 
   ;
@@ -112,7 +117,7 @@ if (browser >= tableWidth && browser < desktopWidth) {
     document.addEventListener("touchend", touchEnd);
 
     function touchMove(e) {
-      moveAt(e.changedTouches[0].pageX, 30);
+      moveAt(e.changedTouches[0].pageX, 0);
     }
 
     ;

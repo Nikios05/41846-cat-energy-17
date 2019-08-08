@@ -26,8 +26,8 @@ if (browser >= mobileWidth && browser < tableWidth) {
 
 //Изменение стилей
 function changeStyle(rangeValue, fixTab) {
-  circle.style.transform = `translateX(${rangeValue + fixTab}px)`;
-  let indexWidth = rangeValue*image.offsetWidth/line.offsetWidth;
+  circle.style.transform = `translateX(${rangeValue}px)`;
+  let indexWidth = rangeValue*image.offsetWidth/line.offsetWidth + fixTab;
   image.style.transform = `translateX(-${image.offsetWidth - indexWidth}px)`;
   containerOne.style.width =  indexWidth + "px";
   containerOne.style.transform = `translateX(${image.offsetWidth - indexWidth}px)`;
@@ -38,14 +38,19 @@ function changeStyle(rangeValue, fixTab) {
   let bgWidthOffset = (circle.getBoundingClientRect().right-circle.clientWidth/2)/browser*100;
   let coefficient = rangeValue*0.00106 + 0.78;
   //фикс для широких экранов
-  if (rangeValue > 425) {
+  if (rangeValue > line.offsetWidth - 5) {
     coefficient = 100;
   }
+
   if (browser >= desktopWidth) {
     bgSlider.style.backgroundImage = `linear-gradient(#ffffff 190px, transparent 190px, transparent 100%),
     linear-gradient(90deg, transparent 0%, transparent ${bgWidthOffset*coefficient}%, #eaeaea ${bgWidthOffset*coefficient}%, #eaeaea 100%)`;
   }
   if (browser >= tableWidth && browser < desktopWidth) {
+    if (rangeValue < line.offsetWidth - (line.offsetWidth - 5)) {
+      coefficient = 0;
+    };
+
     bgSlider.style.backgroundImage = `linear-gradient(#ffffff 575px, transparent 575px, transparent 100%),
     linear-gradient(90deg, transparent 0%, transparent ${bgWidthOffset*coefficient}%, #eaeaea ${bgWidthOffset*coefficient}%, #eaeaea 100%)`;
   }
@@ -55,12 +60,12 @@ function changeStyle(rangeValue, fixTab) {
 //Начальное состояние
 
 //Функция изминения
-function moveAt(pageX) {
+function moveAt(pageX, fixTab) {
   let right = line.getBoundingClientRect().right,
       left = line.getBoundingClientRect().left;
   let range = pageX - left;
   if (range >= 0  && range <= (right-left)) {
-    changeStyle(range);
+    changeStyle(range, fixTab);
   };
 };
 
@@ -100,7 +105,7 @@ if (browser >= tableWidth && browser < desktopWidth) {
     document.addEventListener("touchend", touchEnd);
 
     function touchMove(e) {
-      moveAt(e.changedTouches[0].pageX, 30);
+      moveAt(e.changedTouches[0].pageX, 0);
     };
 
     function touchEnd() {
