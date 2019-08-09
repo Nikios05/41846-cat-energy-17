@@ -40,7 +40,9 @@
   position: absolute;
   top: 0;
   left: 0;
+  width: 100vw;
   border: none;
+  z-index: 9;
 }
 
 
@@ -56,14 +58,16 @@
   height: 106px;
 
   background: url("../img/map-pin.png") no-repeat 0 0;
-  z-index: 20;
 }
 
 .address__map-image {
   display: block;
+  // position: absolute;
+  top: 0;
   width: 320px;
   height: 400px;
   margin: 0 auto;
+  z-index: 5;
 }
 
 @media (min-width: @table-width) {
