@@ -33,13 +33,29 @@
 .form__text {
   width: 170px;
   flex-grow: 1;
-  padding: 14px 0 12px 15px;
+  padding: 14px 12px 15px;
   margin-left: 15px;
+  height: 52px;
 
   .oswald-font-m(16px, 18px);
   text-transform: uppercase;
   border: 1px solid @line-gray;
   box-sizing: border-box;
+}
+
+.form__text:hover {
+  border: 1px solid @line-hvr;
+}
+
+.form__text:active,
+.form__text:focus {
+  border: 2px solid @line-active;
+  outline: none;
+}
+
+.form__text:invalid {
+  border: 2px solid @line-invalid;
+  outline: none;
 }
 
 .form__text[type="email"],
@@ -48,26 +64,18 @@
   padding-right: 45px;
 }
 
-.form__label--email::after {
-  content: "";
+.form__icon {
   position: absolute;
-  top: 17px;
-  right: 15px;
-  width: 17px;
-  height: 13px;
-
-  background: url("../img/icon-mail.svg") no-repeat 0 0;
+  right: 20px;
 }
 
-.form__label--tel::after {
-  content: "";
-  position: absolute;
-  top: 13px;
-  right: 13px;
-  width: 20px;
-  height: 20px;
+.form__text:focus + .form__icon > path,
+.form__text:active + .form__icon > path {
+  fill: @light-green;
+}
 
-  background: url("../img/icon-phone.svg") no-repeat 0 0;
+.form__text:invalid + .form__icon > path {
+  fill: @line-invalid;
 }
 
 .form__checkbox {
@@ -130,8 +138,17 @@
   width: 28px;
   height: 28px;
 
-  border: 1px solid @line-gray;
+  border: 1px solid #cdcdcd;
   border-radius: 50%;
+}
+
+.form__label--radio:hover::after,
+.form__label--radio:focus::after {
+  border: 1px solid #bababa;
+}
+
+.form__label--radio:active {
+  opacity: 0.3;
 }
 
 .form__radio:checked ~ .form__label--radio::before {
@@ -180,6 +197,14 @@
   border: 1px solid @line-gray;
 }
 
+.form__label--checkbox:hover::after {
+  border: 1px solid @line-hvr;
+}
+
+.form__label--checkbox:active {
+  opacity: 0.3;
+}
+
 .form__checkbox:checked ~ .form__label--checkbox::before {
   content: "";
   position: absolute;
@@ -214,6 +239,16 @@
   .oswald-font-m(16px, 18px);
   text-transform: uppercase;
   box-sizing: border-box;
+}
+
+.form__text-area:hover {
+  border: 1px solid @line-hvr;
+}
+
+.form__text-area:active,
+.form__text-area:focus {
+  border: 2px solid @line-active;
+  outline: none;
 }
 
 .form__submit {
