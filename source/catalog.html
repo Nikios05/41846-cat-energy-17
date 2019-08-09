@@ -22,19 +22,19 @@
             <img class="logo-image page-header__logo--ml" src="img/logo-mobile.svg" width="191" height="38" alt="Кэт энерджи">
           </picture>
         </a>
-        <nav class="main-nav">
+        <nav class="main-nav page-header__nav">
           <button class="main-nav__toggle main-nav__toggle--open" type="button">Открыть меню</button>
-            <ul class="main-nav__list site-list">
-              <li class="site-list__item">
-                <a class="site-list__link" href="index.html">Главная</a>
-              </li>
-              <li class="site-list__item">
-                <a class="site-list__link site-list__link--active">Каталог продукции</a>
-              </li>
-              <li class="site-list__item">
-                <a class="site-list__link" href="form.html">Подбор программы</a>
-              </li>
-            </ul>
+          <ul class="main-nav__list site-list">
+            <li class="site-list__item">
+              <a class="site-list__link" href="index.html">Главная</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link site-list__link--active" href="#">Каталог продукции</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="form.html">Подбор программы</a>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
@@ -83,7 +83,9 @@
                 </picture>
               </a>
               <table class="product__composition">
-                <th class="product__title"><a class="product__link" href="#">Cat energy pro 1000 г</a></th>
+                <tr class="product__title">
+                  <th><a class="product__link" href="#">Cat energy pro 1000 г</a></th>
+                </tr>
                 <tr class="product__item">
                   <td class="product__index">Обьем</td>
                   <td class="product__value">1000 г</td>
@@ -110,7 +112,9 @@
                 </picture>
               </a>
               <table class="product__composition">
-                <th class="product__title"><a class="product__link" href="#">Cat energy pro 500 г</a></th>
+                <tr class="product__title">
+                  <th><a class="product__link" href="#">Cat energy pro 500 г</a></th>
+                </tr>
                 <tr class="product__item">
                   <td class="product__index">Обьем</td>
                   <td class="product__value">500 г</td>
@@ -137,7 +141,9 @@
                 </picture>
               </a>
               <table class="product__composition">
-                <th class="product__title"><a class="product__link" href="#">Cat energy pro 1000 г</a></th>
+                <tr class="product__title">
+                  <th><a class="product__link" href="#">Cat energy pro 1000 г</a></th>
+                </tr>
                 <tr class="product__item">
                   <td class="product__index">Обьем</td>
                   <td class="product__value">1000 г</td>
@@ -164,7 +170,9 @@
                 </picture>
               </a>
               <table class="product__composition">
-                <th class="product__title"><a class="product__link" href="#">Cat energy slim 500 г</a></th>
+                <tr class="product__title">
+                  <th><a class="product__link" href="#">Cat energy slim 500 г</a></th>
+                </tr>
                 <tr class="product__item">
                   <td class="product__index">Обьем</td>
                   <td class="product__value">500 г</td>
@@ -191,7 +199,9 @@
                 </picture>
               </a>
               <table class="product__composition">
-                <th class="product__title"><a class="product__link" href="#">Cat energy slim 1000 г</a></th>
+                <tr class="product__title">
+                  <th><a class="product__link" href="#">Cat energy slim 1000 г</a></th>
+                </tr>
                 <tr class="product__item">
                   <td class="product__index">Обьем</td>
                   <td class="product__value">1000 г</td>
@@ -218,7 +228,9 @@
                 </picture>
               </a>
               <table class="product__composition">
-                <th class="product__title"><a class="product__link" href="#">Cat energy slim 500 г</a></th>
+                <tr class="product__title">
+                  <th><a class="product__link" href="#">Cat energy slim 500 г</a></th>
+                </tr>
                 <tr class="product__item">
                   <td class="product__index">Обьем</td>
                   <td class="product__value">500 г.</td>
@@ -299,7 +311,7 @@
           <p class="address__text">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
         </div>
         <p class="address__map address__map--pin">
-          <iframe src="https://yandex.ru/map-widget/v1/-/CGVqiR3-" width="320" height="400" frameborder="1" allowfullscreen="true"></iframe>
+          <iframe src="https://yandex.ru/map-widget/v1/-/CGVqiR3-" width="320" height="400"></iframe>
           <picture>
             <source media="(min-width: 1220px)" srcset="img/bg-map-desktop@1x.png 1x, img/bg-map-desktop@2x.png 2x">
             <source media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.png 1x, img/bg-map-tablet@2x.png 2x">
@@ -364,5 +376,6 @@
       </div>
     </footer>
 
+    <script src="js/app.js"></script>
   </body>
 </html>

@@ -35,7 +35,6 @@
   flex-grow: 1;
   padding: 14px 12px 15px;
   margin-left: 15px;
-  height: 52px;
 
   .oswald-font-m(16px, 18px);
   text-transform: uppercase;
@@ -49,13 +48,11 @@
 
 .form__text:active,
 .form__text:focus {
-  border: 2px solid @line-active;
-  outline: none;
+  outline: 2px solid @line-active;
 }
 
 .form__text:invalid {
-  border: 2px solid @line-invalid;
-  outline: none;
+  outline: 2px solid @line-invalid;
 }
 
 .form__text[type="email"],
@@ -66,7 +63,21 @@
 
 .form__icon {
   position: absolute;
+  top: 50%;
+}
+
+.form__icon--mail {
   right: 20px;
+  width: 17px;
+  height: 13px;
+  margin-top: -6px;
+}
+
+.form__icon--tel {
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
 }
 
 .form__text:focus + .form__icon > path,
@@ -138,12 +149,12 @@
   border-radius: 50%;
 }
 
-.form__label--radio:hover::after,
-.form__label--radio:focus::after {
+.form__label--radio:hover::after {
   border: 1px solid #bababa;
 }
 
-.form__label--radio:active {
+.form__label--radio:active,
+.form__label--radio:focus {
   opacity: 0.3;
 }
 
@@ -245,8 +256,7 @@
 
 .form__text-area:active,
 .form__text-area:focus {
-  border: 2px solid @line-active;
-  outline: none;
+  outline: 2px solid @line-active;
 }
 
 .form__submit {
@@ -289,7 +299,7 @@
   }
 
   .form__text {
-    padding: 15px 0 12px 20px;
+    padding: 15px 20px;
     font-size: 20px;
     line-height: 20px;
   }
@@ -317,7 +327,7 @@
   }
 
   .form__label--radio {
-    padding: 10px 0 7px;
+    padding: 10px 0;
     padding-left: 60px;
   }
 
