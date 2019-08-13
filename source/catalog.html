@@ -4,18 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Кэт энерджи: Каталог продукции</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <script>
       // Picture element HTML5 shiv
       document.createElement( "picture" );
     </script>
-    <script src="js/picturefill.js" async></script>
-    <script src="js/svguse.js" defer></script>
+    <script src="js/picturefill.js" async=""></script>
+    <script src="js/svguse.js" defer=""></script>
   </head>
   <body class="content no-js">
     <script>
       document.body.classList.remove("no-js");
     </script>
+    <div style="display: none;">
+      <include src="source/img/sprite.svg"></include>
+    </div>
+
     <header class="page-header">
       <div class="page-header__wrapper">
         <a class="logo page-header__logo" href="index.html">
@@ -358,7 +362,7 @@
           <li class="social-list__item">
             <a href="#" class="social__link">
               <svg class="social__icon social__icon--vk" width="25" height="20" viewbox="0 0 22 12">
-                <use xlink:href="img/sprite.svg#icon-vk"></use>
+                <use xlink:href="img/sprite.svg#sprite-vk"></use>
               </svg>
               Мы Вконтакте
             </a>
@@ -366,7 +370,7 @@
           <li class="social-list__item">
             <a href="#" class="social__link">
               <svg class="social__icon social__icon--insta" width="25" height="20" viewbox="0 0 16.1 16">
-                <use xlink:href="img/sprite.svg#icon-insta"></use>
+                <use xlink:href="img/sprite.svg#sprite-insta"></use>
               </svg>
               Мы в Инстаграме
             </a>
@@ -374,7 +378,7 @@
           <li class="social-list__item">
             <a href="#" class="social__link social__link--facebook">
               <svg class="social__icon social__icon--insta" width="25" height="20" viewbox="0 0 10 19">
-                <use xlink:href="img/sprite.svg#icon-fb"></use>
+                <use xlink:href="img/sprite.svg#sprite-fb"></use>
               </svg>
               Мы в Фейсбуке
             </a>
@@ -384,7 +388,7 @@
           <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
             HTML Academy
             <svg class="copyright__icon" width="30px" height="35" viewbox="0 0 60 60">
-              <use xlink:href="img/sprite.svg#icon-html-academy"></use>
+              <use xlink:href="img/sprite.svg#sprite-htmlacademy"></use>
             </svg>
           </a>
         </div>
