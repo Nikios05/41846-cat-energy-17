@@ -153,8 +153,7 @@
   border: 1px solid #bababa;
 }
 
-.form__label--radio:active,
-.form__label--radio:focus {
+.form__label--radio:active {
   opacity: 0.3;
 }
 
@@ -169,6 +168,11 @@
 
   background-color: @light-green;
   border-radius: 50%;
+}
+
+.form__radio:focus + .form__label::after {
+  outline: none;
+  box-shadow: @outline-green;
 }
 
 .form__contact {
@@ -225,6 +229,11 @@
   border-top: none;
   border-right: none;
   transform: rotate(-45deg);
+}
+
+.form__checkbox:focus + .form__label::after {
+  outline: none;
+  box-shadow: @outline-green;
 }
 
 .form__subtitle {
