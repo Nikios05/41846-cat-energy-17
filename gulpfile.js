@@ -9,7 +9,7 @@ var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
 var babel = require("gulp-babel");
 var concat = require("gulp-concat");
-var clean = require("gulp-clean");
+var del = require("del");
 var imagemin = require("gulp-imagemin");
 var webp = require("gulp-webp");
 var csso = require("gulp-csso");
@@ -80,13 +80,11 @@ gulp.task("css", function () {
 });
 
 gulp.task("clean", function () {
-  return gulp.src("build/")
-      .pipe(clean());
+  return del("build");
 });
 
 gulp.task("babel", function () {
-  gulp.src("source/js/app.js")
-      .pipe(clean());
+  del("source/js/app.js");
   return gulp.src("source/js/library/*.js")
       .pipe(sourcemap.init())
       .pipe(babel({
