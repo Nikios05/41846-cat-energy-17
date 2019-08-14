@@ -80,7 +80,7 @@ gulp.task("css", function () {
 });
 
 gulp.task("clean", function () {
-  return gulp.src("build")
+  return gulp.src("build/")
       .pipe(clean());
 });
 
