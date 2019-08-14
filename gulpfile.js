@@ -113,9 +113,9 @@ gulp.task("server", function () {
 
 gulp.task("build", gulp.series(
   "clean",
-  "copy", 
+  "copy",
   "css",
   "sprite",
-  "html" 
+  "html"
 ));
 gulp.task("start", gulp.series("babel", "build", "server"));

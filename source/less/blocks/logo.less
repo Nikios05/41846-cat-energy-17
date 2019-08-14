@@ -2,11 +2,25 @@
   display: block;
 }
 
-.logo:hover,
-.logo:focus {
+.logo:hover {
   opacity: 0.8;
 }
 
+.logo:focus {
+  opacity: 0.8;
+  outline: none;
+  box-shadow: @outline-green;
+}
+
 .logo:active {
+  outline: none;
   opacity: 0.6;
+}
+
+.logo--index:hover,
+.logo--index:focus,
+.logo--index:active {
+  opacity: 1;
+  outline: none;
+  cursor: default;
 }

@@ -15,9 +15,14 @@
   background-color: @light-green;
 }
 
-.button--green:hover,
-.button--green:focus {
+.button--green:hover {
   background-color: @dark-green;
+}
+
+.button--green:focus {
+  outline: none;
+  background-color: @dark-green;
+  box-shadow: @outline-green;
 }
 
 .button--green:active {
@@ -30,9 +35,13 @@
   background-color: @light-gray;
 }
 
-.button--gray:hover,
-.button--gray:focus {
+.button--gray:hover {
   background-color: @medium-gray;
+}
+
+.button--gray:focus {
+  outline: none;
+  box-shadow: @outline-green;
 }
 
 .button--gray:active {

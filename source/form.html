@@ -9,8 +9,9 @@
       // Picture element HTML5 shiv
       document.createElement( "picture" );
     </script>
-    <script src="js/picturefill.js" async=""></script>
-    <script src="js/svguse.js" defer=""></script>
+    <script src="js/polyfill/picturefill.js" async=""></script>
+    <script src="js/polyfill/svguse.js" defer=""></script>
+    <script src="js/polyfill/focus-visible.js"></script>
   </head>
   <body class="content no-js">
     <script>
@@ -22,7 +23,7 @@
 
     <header class="page-header">
       <div class="page-header__wrapper">
-        <a class="logo page-header__logo" href="index.html">
+        <a class="logo page-header__logo" href="index.html" alt="Переход на главную страницу">
           <picture>
             <source media="(min-width: 1220px)" srcset="img/logo-desktop.svg">
             <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
@@ -39,7 +40,7 @@
               <a class="site-list__link" href="catalog.html">Каталог продукции</a>
             </li>
             <li class="site-list__item">
-              <a class="site-list__link site-list__link--active" href="#">Подбор программы</a>
+              <a class="site-list__link site-list__link--active">Подбор программы</a>
             </li>
           </ul>
         </nav>
@@ -172,7 +173,7 @@
           <p class="address__text">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
         </div>
         <p class="address__map address__map--pin">
-          <iframe src="https://yandex.ru/map-widget/v1/-/CGVqiR3-" width="320" height="400"></iframe>
+          <iframe src="https://yandex.ru/map-widget/v1/-/CGVqiR3-" width="320" height="400" tabindex="-1"></iframe>
           <picture>
             <source media="(min-width: 1220px)" srcset="img/bg-map-desktop@1x.png 1x, img/bg-map-desktop@2x.png 2x">
             <source media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.png 1x, img/bg-map-tablet@2x.png 2x">
@@ -181,12 +182,12 @@
         </p>
       </div>
       <div class="page-footer__container">
-        <a class="logo page-footer__logo" href="index.html">
+        <a class="logo page-footer__logo" href="index.html" alt="Переход на главную страницу">
           <img class="logo-image" src="img/logo-footer.svg" width="128" height="24" alt="Кэт энерджи">
         </a>
         <ul class="social-list page-footer__social">
           <li class="social-list__item">
-            <a href="#" class="social__link">
+            <a href="#" class="social__link" alt="Перейти на Вконтакте">
               <svg class="social__icon social__icon--vk" width="25" height="20" viewbox="0 0 22 12">
                 <use xlink:href="img/sprite.svg#sprite-vk"></use>
               </svg>
@@ -194,7 +195,7 @@
             </a>
           </li>
           <li class="social-list__item">
-            <a href="#" class="social__link">
+            <a href="#" class="social__link" alt="Перейти в Инстаграм">
               <svg class="social__icon social__icon--insta" width="25" height="20" viewbox="0 0 16.1 16">
                 <use xlink:href="img/sprite.svg#sprite-insta"></use>
               </svg>
@@ -202,7 +203,7 @@
             </a>
           </li>
           <li class="social-list__item">
-            <a href="#" class="social__link social__link--facebook">
+            <a href="#" class="social__link" alt="Перейти в Фейсбук">
               <svg class="social__icon social__icon--insta" width="25" height="20" viewbox="0 0 10 19">
                 <use xlink:href="img/sprite.svg#sprite-fb"></use>
               </svg>
@@ -211,7 +212,7 @@
           </li>
         </ul>
         <div class="copyright page-footer__copyright">
-          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" alt="Перейти на курс HTML Academy">
             HTML Academy
             <svg class="copyright__icon" width="30px" height="35" viewbox="0 0 60 60">
               <use xlink:href="img/sprite.svg#sprite-htmlacademy"></use>

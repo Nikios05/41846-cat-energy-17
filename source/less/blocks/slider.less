@@ -30,9 +30,13 @@
   cursor: pointer;
 }
 
-.slider__toggle:hover,
-.slider__toggle:focus {
+.slider__toggle:hover {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.slider__toggle:focus {
+  outline: none;
+  box-shadow: @outline-green;
 }
 
 .slider__toggle:active {
