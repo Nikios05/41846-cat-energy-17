@@ -7,6 +7,8 @@ const image = document.querySelector(".slider__image--centering");
 // Ползунок/переключатель
 const circle = document.querySelector(".slider__toggle");
 const line = document.querySelector(".slider__line");
+let   right = line.getBoundingClientRect().right,
+      left = line.getBoundingClientRect().left;
 
 // Разрешения экранов
 let mobileWidth = 320;
@@ -26,6 +28,20 @@ if (browser >= mobileWidth && browser < tableWidth) {
 
 //Изменение стилей
 function changeStyle(rangeValue, fixTab) {
+
+  //Реализация прокрутки с клавиатуры, для доступности
+  circle.onfocus = () => {
+    document.documentElement.scrollTop = 1920;
+    document.addEventListener("keydown", (e) => {
+        if (e.key == "ArrowLeft") {
+          if (rangeValue - 10 >= 0) rangeValue = rangeValue - 10;
+        }
+        if (e.key == "ArrowRight") {
+          if (rangeValue + 10 <= (right-left)) rangeValue = rangeValue + 10;
+        }
+        changeStyle(rangeValue, 0);
+    })
+  }
   circle.style.transform = `translateX(${rangeValue}px)`;
   let indexWidth = rangeValue*image.offsetWidth/line.offsetWidth + fixTab;
   image.style.transform = `translateX(-${image.offsetWidth - indexWidth}px)`;
@@ -61,9 +77,8 @@ function changeStyle(rangeValue, fixTab) {
 
 //Функция изминения
 function moveAt(pageX, fixTab) {
-  let right = line.getBoundingClientRect().right,
-      left = line.getBoundingClientRect().left;
   let range = pageX - left;
+
   if (range >= 0  && range <= (right-left)) {
     changeStyle(range, fixTab);
   };
