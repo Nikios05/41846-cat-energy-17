@@ -116,7 +116,7 @@ gulp.task("server", function () {
 
   gulp.watch("source/less/**/*.less", gulp.series("css"));
   gulp.watch("source/img/sprite-*.svg", gulp.series("sprite", "html"));
-  gulp.watch("source/js/library/*.js", gulp.series("babel", "jsmin"));
+  gulp.watch("source/js/**/*.js", gulp.series("jsmin"));
   gulp.watch("source/*.html", gulp.series("html"));
 });
 

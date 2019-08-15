@@ -9,12 +9,15 @@
     <link rel="preload" href="fonts/oswaldregular.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/oswaldregular.woff" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
+
     <script>
       document.createElement( "picture" );
     </script>
     <script src="js/polyfill/picturefill.js" async=""></script>
     <script src="js/polyfill/svguse.js" defer=""></script>
     <script src="js/polyfill/focus-visible.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=c461c44d-a89d-4167-a9e9-008782f98509" type="text/javascript"></script>
+    <script src="js/yandexMap.js" type="text/javascript"></script>
   </head>
   <body class="content no-js">
     <script>
@@ -177,14 +180,14 @@
           <p class="address__invite">Приглашаем<br> к сотрудничеству дилеров!</p>
           <p class="address__text">ул. Большая Конюшенная, д. 19/8 <span>Санкт-Петербург</span></p>
         </div>
-        <p class="address__map address__map--pin">
-          <iframe src="https://yandex.ru/map-widget/v1/-/CGVqiR3-" width="320" height="400" tabindex="-1">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</iframe>
+        <div class="address__map address__map--pin">
+          <div class="address__yandex-map" id="yandex-map"></div>
           <picture>
             <source media="(min-width: 1220px)" srcset="img/bg-map-desktop@1x.png 1x, img/bg-map-desktop@2x.png 2x">
             <source media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.png 1x, img/bg-map-tablet@2x.png 2x">
             <img class="address__map-image" src="img/bg-map-mobile@1x.png" srcset="img/bg-map-mobile@2x.png 2x" width="320" height="400" alt="Офис компании по адресу ул. Большая Конюшенная, д. 19/8 Санкт-Петербург">
           </picture>
-        </p>
+        </div>
       </div>
       <div class="page-footer__container">
         <a class="logo page-footer__logo">
