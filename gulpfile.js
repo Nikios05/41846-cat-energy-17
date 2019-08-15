@@ -9,7 +9,7 @@ var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
 var babel = require("gulp-babel");
 var concat = require("gulp-concat");
-var clean = require("gulp-clean");
+var del = require("del");
 var imagemin = require("gulp-imagemin");
 var webp = require("gulp-webp");
 var csso = require("gulp-csso");
@@ -17,6 +17,17 @@ var rename = require("gulp-rename");
 var svgstore = require("gulp-svgstore");
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
+var htmlmin = require("gulp-htmlmin");
+var jsmin = require("gulp-uglify");
+
+gulp.task('jsmin', function () {
+  return gulp.src("source/js/**/*.js")
+    .pipe(babel({
+      presets: ["@babel/env"]
+    }))
+    .pipe(jsmin())
+    .pipe(gulp.dest("build/js"));
+});
 
 gulp.task("sprite", function () {
   return gulp.src("source/img/sprite-*.svg")
@@ -32,6 +43,7 @@ gulp.task("html", function () {
   .pipe(posthtml([
     include()
   ]))
+  .pipe(htmlmin({ collapseWhitespace: true }))
   .pipe(gulp.dest("build"));
 });
 
@@ -68,13 +80,11 @@ gulp.task("css", function () {
 });
 
 gulp.task("clean", function () {
-  return gulp.src("build")
-      .pipe(clean());
+  return del("build");
 });
 
 gulp.task("babel", function () {
-  gulp.src("source/js/app.js")
-      .pipe(clean());
+  del("source/js/app.js");
   return gulp.src("source/js/library/*.js")
       .pipe(sourcemap.init())
       .pipe(babel({
@@ -88,8 +98,7 @@ gulp.task("babel", function () {
 gulp.task("copy", function () {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
-    "source/img/**",
-    "source/js/**"
+    "source/img/**"
   ], {
     base: "source"
   })
@@ -107,15 +116,17 @@ gulp.task("server", function () {
 
   gulp.watch("source/less/**/*.less", gulp.series("css"));
   gulp.watch("source/img/sprite-*.svg", gulp.series("sprite", "html"));
-  gulp.watch("source/js/library/*.js", gulp.series("babel", "copy"));
+  gulp.watch("source/js/**/*.js", gulp.series("jsmin"));
   gulp.watch("source/*.html", gulp.series("html"));
 });
 
 gulp.task("build", gulp.series(
   "clean",
-  "copy", 
+  "babel",
+  "jsmin",
+  "copy",
   "css",
   "sprite",
-  "html" 
+  "html"
 ));
-gulp.task("start", gulp.series("babel", "build", "server"));
+gulp.task("start", gulp.series("build", "server"));

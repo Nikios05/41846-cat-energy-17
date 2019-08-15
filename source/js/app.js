@@ -19,7 +19,9 @@ var containerOne = document.querySelector(".slider__container-one");
 var image = document.querySelector(".slider__image--centering"); // Ползунок/переключатель
 
 var circle = document.querySelector(".slider__toggle");
-var line = document.querySelector(".slider__line"); // Разрешения экранов
+var line = document.querySelector(".slider__line");
+var right = line.getBoundingClientRect().right,
+    left = line.getBoundingClientRect().left; // Разрешения экранов
 
 var mobileWidth = 320;
 var tableWidth = 768;
@@ -37,6 +39,22 @@ if (browser >= mobileWidth && browser < tableWidth) {
 ; //Изменение стилей
 
 function changeStyle(rangeValue, fixTab) {
+  //Реализация прокрутки с клавиатуры, для доступности
+  circle.onfocus = function () {
+    document.documentElement.scrollTop = 1920;
+    document.addEventListener("keydown", function (e) {
+      if (e.key == "ArrowLeft") {
+        if (rangeValue - 10 >= 0) rangeValue = rangeValue - 10;
+      }
+
+      if (e.key == "ArrowRight") {
+        if (rangeValue + 10 <= right - left) rangeValue = rangeValue + 10;
+      }
+
+      changeStyle(rangeValue, 0);
+    });
+  };
+
   circle.style.transform = "translateX(".concat(rangeValue, "px)");
   var indexWidth = rangeValue * image.offsetWidth / line.offsetWidth + fixTab;
   image.style.transform = "translateX(-".concat(image.offsetWidth - indexWidth, "px)");
@@ -69,8 +87,6 @@ function changeStyle(rangeValue, fixTab) {
 
 
 function moveAt(pageX, fixTab) {
-  var right = line.getBoundingClientRect().right,
-      left = line.getBoundingClientRect().left;
   var range = pageX - left;
 
   if (range >= 0 && range <= right - left) {
