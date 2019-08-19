@@ -9,14 +9,6 @@
     <link rel="preload" href="fonts/oswaldregular.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/oswaldregular.woff" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
-    <script>
-      document.createElement( "picture" );
-    </script>
-    <script src="js/polyfill/picturefill.js" async=""></script>
-    <script src="js/polyfill/svguse.js" defer=""></script>
-    <script src="js/polyfill/focus-visible.js"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=c461c44d-a89d-4167-a9e9-008782f98509" type="text/javascript"></script>
-    <script src="js/yandexMap.js" type="text/javascript"></script>
   </head>
   <body class="content no-js">
     <script>
@@ -28,11 +20,11 @@
 
     <header class="page-header">
       <div class="page-header__wrapper">
-        <a class="logo page-header__logo" href="index.html" alt="Переход на главную страницу">
+        <a class="logo page-header__logo" href="index.html" aria-label="Переход на главную страницу">
           <picture>
             <source media="(min-width: 1220px)" srcset="img/logo-desktop.svg">
             <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
-            <img class="logo-image page-header__logo--ml" src="img/logo-mobile.svg" width="191" height="38" alt="Кэт энерджи">
+            <img class="logo-image" src="img/logo-mobile.svg" width="191" height="38" alt="Кэт энерджи">
           </picture>
         </a>
         <nav class="main-nav page-header__nav">
@@ -104,8 +96,8 @@
             </fieldset>
           </div>
 
-          <fieldset class="form__contact form--line form--line-t">
-            <h3 class="form__subtitle title title--size-m">Контактные данные<br> (владельца кота)</h3>
+          <fieldset class="form__contact form__contact--line">
+            <h3 class="form__subtitle title title--size-m">Контактные данные <br> (владельца кота)</h3>
             <div class="form__container">
               <p class="form__item">
                 <label class="form__label">
@@ -128,14 +120,14 @@
             </div>
           </fieldset>
 
-          <fieldset class="form__comment form--line">
+          <fieldset class="form__comment form__comment--line">
             <h3 class="form__subtitle title title--size-m">Комментарий</h3>
             <p class="form__item form__container">
               <textarea class="form__text-area" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
             </p>
           </fieldset>
 
-          <fieldset class="form__add form--line">
+          <fieldset class="form__add form__add--line">
             <h3 class="form__subtitle title title--size-m">Дополнительно</h3>
             <div class="form__wrapper">
               <p class="form__item">
@@ -173,9 +165,9 @@
 
     <footer class="page-footer">
       <div class="page-footer__address address">
-        <div class="address__wrapper">
+        <div class="address__wrapper address__wrapper--white">
           <p class="address__invite">Приглашаем<br> к сотрудничеству дилеров!</p>
-          <p class="address__text">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
+          <p class="address__text">ул. Большая Конюшенная, д. 19/8 <span>Санкт-Петербург</span></p>
         </div>
         <div class="address__map address__map--pin">
           <div class="address__yandex-map" id="yandex-map"></div>
@@ -187,29 +179,29 @@
         </div>
       </div>
       <div class="page-footer__container">
-        <a class="logo page-footer__logo" href="index.html" alt="Переход на главную страницу">
+        <a class="logo page-footer__logo" href="index.html">
           <img class="logo-image" src="img/logo-footer.svg" width="128" height="24" alt="Кэт энерджи">
         </a>
         <ul class="social-list page-footer__social">
           <li class="social-list__item">
-            <a href="#" class="social__link" alt="Перейти на Вконтакте">
-              <svg class="social__icon social__icon--vk" width="25" height="20" viewbox="0 0 22 12">
+            <a href="#" class="social-list__link" aria-label="Перейти на Вконтакте">
+              <svg class="social-list__icon social-list__icon--vk" width="22" height="12" viewbox="0 0 22 12">
                 <use xlink:href="img/sprite.svg#sprite-vk"></use>
               </svg>
               Мы Вконтакте
             </a>
           </li>
           <li class="social-list__item">
-            <a href="#" class="social__link" alt="Перейти в Инстаграм">
-              <svg class="social__icon social__icon--insta" width="25" height="20" viewbox="0 0 16.1 16">
+            <a href="#" class="social-list__link" aria-label="Перейти в Инстаграм">
+              <svg class="social-list__icon social-list__icon--insta" width="16" height="16" viewbox="0 0 16.1 16">
                 <use xlink:href="img/sprite.svg#sprite-insta"></use>
               </svg>
               Мы в Инстаграме
             </a>
           </li>
           <li class="social-list__item">
-            <a href="#" class="social__link" alt="Перейти в Фейсбук">
-              <svg class="social__icon social__icon--insta" width="25" height="20" viewbox="0 0 10 19">
+            <a href="#" class="social-list__link" aria-label="Перейти в Фейсбук">
+              <svg class="social-list__icon social-list__icon--fb" width="10" height="19" viewbox="0 0 10 19">
                 <use xlink:href="img/sprite.svg#sprite-fb"></use>
               </svg>
               Мы в Фейсбуке
@@ -217,9 +209,9 @@
           </li>
         </ul>
         <div class="copyright page-footer__copyright">
-          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" alt="Перейти на курс HTML Academy">
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Перейти на курс HTML Academy">
             HTML Academy
-            <svg class="copyright__icon" width="30px" height="35" viewbox="0 0 60 60">
+            <svg class="copyright__icon" width="27px" height="34" viewbox="0 0 27 35">
               <use xlink:href="img/sprite.svg#sprite-htmlacademy"></use>
             </svg>
           </a>
@@ -227,6 +219,14 @@
       </div>
     </footer>
 
+    <script>
+      document.createElement( "picture" );
+    </script>
+    <script src="js/polyfill/picturefill.js" async=""></script>
+    <script src="js/polyfill/svguse.js" defer=""></script>
+    <script src="js/polyfill/focus-visible.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=c461c44d-a89d-4167-a9e9-008782f98509" type="text/javascript"></script>
+    <script src="js/yandexMap.js" type="text/javascript"></script>
     <script src="js/validation.js"></script>
   </body>
 </html>

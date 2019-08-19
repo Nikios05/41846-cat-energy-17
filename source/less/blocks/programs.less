@@ -14,6 +14,7 @@
 
 .programs__title {
   margin: 0;
+  margin-top: 10px;
   margin-bottom: 30px;
   padding-left: 70px;
 
@@ -24,7 +25,7 @@
 .programs__item::before {
   content: "";
   position: absolute;
-  top: 13px;
+  top: 25px;
   left: 20px;
 
   width: 52px;
@@ -40,7 +41,7 @@
 }
 
 .programs__item--cat-slim::after {
-  top: 12px;
+  top: 25px;
   left: 30px;
 
   width: 35px;
@@ -49,7 +50,7 @@
 }
 
 .programs__item--cat-pro::after {
-  top: 25px;
+  top: 37px;
   left: 12px;
 
   width: 67px;
@@ -67,6 +68,10 @@
   border-bottom: 1px solid @line-gray;
 }
 
+.programs__description br {
+  display: none;
+}
+
 .programs__link {
   .oswald-font-m(16px, 16px);
   text-transform: uppercase;
@@ -76,8 +81,8 @@
 .programs__link::after {
   content: "";
   display: inline-block;
-  margin-left: 12px;
-  margin-top: -3px;
+  margin-left: 10px;
+  margin-top: -2px;
   vertical-align: middle;
 
 
@@ -103,13 +108,13 @@
 }
 
 .programs--mb {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 @media (min-width: @table-width) {
   .programs__item {
     margin-bottom: 30px;
-    padding: 55px;
+    padding: 65px 55px;
   }
 
   .programs__title {
@@ -127,16 +132,21 @@
     .arial-font(16px, 24px);
   }
 
+  .programs__description br {
+    display: block;
+  }
+
   .programs__item::before {
-    top: 65px;
+    top: 50%;
     left: 445px;
 
     width: 200px;
     height: 200px;
+    transform: translateY(-50%);
   }
 
   .programs__item--cat-slim::after {
-    top: 55px;
+    top: 80px;
     left: 475px;
 
     width: 140px;
@@ -144,8 +154,8 @@
   }
 
   .programs__item--cat-pro::after {
-    top: 110px;
-    left: 410px;
+    top: 130px;
+    left: 415px;
 
     width: 270px;
     height: 110px;
@@ -153,6 +163,14 @@
 
   .programs__link {
     .oswald-font-m(20px, 20px);
+  }
+
+  .programs__link::after {
+    margin-left: 20px;
+  }
+
+  .programs--mb {
+    margin-bottom: 45px;
   }
 }
 
@@ -167,22 +185,25 @@
     width: 465px;
   }
 
+  .programs__description br {
+    display: none;
+  }
+
   .programs__title {
-    margin-top: 30px;
     margin-bottom: 70px;
-    padding-left: 165px;
+    padding-left: 160px;
   }
 
   .programs__item::before {
-    top: 50px;
-    left: 50px;
+    top: 95px;
+    left: 55px;
 
     width: 100px;
     height: 100px;
   }
 
   .programs__item--cat-slim::after {
-    top: 45px;
+    top: 40px;
     left: 65px;
 
     width: 70px;
@@ -190,10 +211,14 @@
   }
 
   .programs__item--cat-pro::after {
-    top: 75px;
-    left: 35px;
+    top: 65px;
+    left: 40px;
 
     width: 135px;
     height: 55px;
+  }
+
+  .programs--mb {
+    margin-bottom: 40px;
   }
 }

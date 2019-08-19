@@ -13,20 +13,17 @@ btnOpen.addEventListener("click", function () {
 });
 "use strict";
 
-//Контейнеры с ихображениями и центровщик контента
 var containerTwo = document.querySelector(".slider__container-two");
 var containerOne = document.querySelector(".slider__container-one");
-var image = document.querySelector(".slider__image--centering"); // Ползунок/переключатель
-
+var image = document.querySelector(".slider__image--centering");
 var circle = document.querySelector(".slider__toggle");
 var line = document.querySelector(".slider__line");
-var right = line.getBoundingClientRect().right,
-    left = line.getBoundingClientRect().left; // Разрешения экранов
-
+var right = line.getBoundingClientRect().right;
+var left = line.getBoundingClientRect().left;
 var mobileWidth = 320;
 var tableWidth = 768;
 var desktopWidth = 1220;
-var browser = document.body.clientWidth; //Слайдер для мобильной версии
+var browser = document.body.clientWidth;
 
 if (browser >= mobileWidth && browser < tableWidth) {
   var imageWrapper = document.querySelector(".slider__slides");
@@ -36,35 +33,33 @@ if (browser >= mobileWidth && browser < tableWidth) {
   });
 }
 
-; //Изменение стилей
-
 function changeStyle(rangeValue, fixTab) {
-  //Реализация прокрутки с клавиатуры, для доступности
-  circle.onfocus = function () {
-    document.documentElement.scrollTop = 1920;
-    document.addEventListener("keydown", function (e) {
-      if (e.key == "ArrowLeft") {
-        if (rangeValue - 10 >= 0) rangeValue = rangeValue - 10;
-      }
+  if (browser >= desktopWidth) {
+    circle.onfocus = function () {
+      document.documentElement.scrollTop = 1920;
+      document.addEventListener("keydown", function (e) {
+        if (e.key == "ArrowLeft") {
+          if (rangeValue - 10 >= 0) rangeValue = rangeValue - 10;
+        }
 
-      if (e.key == "ArrowRight") {
-        if (rangeValue + 10 <= right - left) rangeValue = rangeValue + 10;
-      }
+        if (e.key == "ArrowRight") {
+          if (rangeValue + 10 <= right - left) rangeValue = rangeValue + 10;
+        }
 
-      changeStyle(rangeValue, 0);
-    });
-  };
+        changeStyle(rangeValue, 0);
+      });
+    };
+  }
 
   circle.style.transform = "translateX(".concat(rangeValue, "px)");
   var indexWidth = rangeValue * image.offsetWidth / line.offsetWidth + fixTab;
   image.style.transform = "translateX(-".concat(image.offsetWidth - indexWidth, "px)");
   containerOne.style.width = indexWidth + "px";
   containerOne.style.transform = "translateX(".concat(image.offsetWidth - indexWidth, "px)");
-  containerTwo.style.width = "".concat(image.offsetWidth - indexWidth, "px"); //Изменение фона
-
+  containerTwo.style.width = "".concat(image.offsetWidth - indexWidth, "px");
   var bgSlider = document.querySelector(".example");
   var bgWidthOffset = (circle.getBoundingClientRect().right - circle.clientWidth / 2) / browser * 100;
-  var coefficient = rangeValue * 0.00106 + 0.78; //фикс для широких экранов
+  var coefficient = rangeValue * 0.00106 + 0.78;
 
   if (rangeValue > line.offsetWidth - 5) {
     coefficient = 100;
@@ -82,9 +77,7 @@ function changeStyle(rangeValue, fixTab) {
     ;
     bgSlider.style.backgroundImage = "linear-gradient(#ffffff 575px, transparent 575px, transparent 100%),\n    linear-gradient(90deg, transparent 0%, transparent ".concat(bgWidthOffset * coefficient, "%, #eaeaea ").concat(bgWidthOffset * coefficient, "%, #eaeaea 100%)");
   }
-} //Начальное состояние
-//Функция изминения
-
+}
 
 function moveAt(pageX, fixTab) {
   var range = pageX - left;
@@ -95,8 +88,6 @@ function moveAt(pageX, fixTab) {
 
   ;
 }
-
-; //Слайдер для десктопной версии
 
 if (browser >= desktopWidth) {
   changeStyle(205, 0);
@@ -121,8 +112,7 @@ if (browser >= desktopWidth) {
       return false;
     };
   };
-} //Слайдер для таб версии
-
+}
 
 if (browser >= tableWidth && browser < desktopWidth) {
   changeStyle(205, 30);

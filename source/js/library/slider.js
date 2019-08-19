@@ -1,35 +1,35 @@
 
-//Контейнеры с ихображениями и центровщик контента
-const containerTwo =  document.querySelector(".slider__container-two");
-const containerOne =  document.querySelector(".slider__container-one");
+/* Контейнеры с ихображениями и центровщик контента */
+const containerTwo = document.querySelector(".slider__container-two");
+const containerOne = document.querySelector(".slider__container-one");
 const image = document.querySelector(".slider__image--centering");
 
-// Ползунок/переключатель
+/* Ползунок/переключатель */
 const circle = document.querySelector(".slider__toggle");
 const line = document.querySelector(".slider__line");
-let   right = line.getBoundingClientRect().right,
-      left = line.getBoundingClientRect().left;
+let right = line.getBoundingClientRect().right;
+let left = line.getBoundingClientRect().left;
 
-// Разрешения экранов
+/* Разрешения экранов */
 let mobileWidth = 320;
 let tableWidth = 768;
 let desktopWidth = 1220;
 let browser = document.body.clientWidth;
 
 
-//Слайдер для мобильной версии
+/* Слайдер для мобильной версии */
 if (browser >= mobileWidth && browser < tableWidth) {
-  const imageWrapper =  document.querySelector(".slider__slides");
+  const imageWrapper = document.querySelector(".slider__slides");
   line.addEventListener("click", (e) => {
     circle.classList.toggle("toggle--on")
     imageWrapper.classList.toggle("image-wrapper--move")
   })
-};
+}
 
-//Изменение стилей
+/* Изменение стилей */
 function changeStyle(rangeValue, fixTab) {
 
-  //Реализация прокрутки с клавиатуры, для доступности
+  /* Реализация прокрутки с клавиатуры, для доступности */
   if (browser >= desktopWidth) {
     circle.onfocus = () => {
       document.documentElement.scrollTop = 1920;
@@ -48,15 +48,15 @@ function changeStyle(rangeValue, fixTab) {
   circle.style.transform = `translateX(${rangeValue}px)`;
   let indexWidth = rangeValue*image.offsetWidth/line.offsetWidth + fixTab;
   image.style.transform = `translateX(-${image.offsetWidth - indexWidth}px)`;
-  containerOne.style.width =  indexWidth + "px";
+  containerOne.style.width = indexWidth + "px";
   containerOne.style.transform = `translateX(${image.offsetWidth - indexWidth}px)`;
   containerTwo.style.width = `${image.offsetWidth - indexWidth}px`;
 
-  //Изменение фона
+  /* Изменение фона */
   const bgSlider = document.querySelector(".example");
   let bgWidthOffset = (circle.getBoundingClientRect().right-circle.clientWidth/2)/browser*100;
   let coefficient = rangeValue*0.00106 + 0.78;
-  //фикс для широких экранов
+  /* фикс для широких экранов */
   if (rangeValue > line.offsetWidth - 5) {
     coefficient = 100;
   }
@@ -65,6 +65,7 @@ function changeStyle(rangeValue, fixTab) {
     bgSlider.style.backgroundImage = `linear-gradient(#ffffff 190px, transparent 190px, transparent 100%),
     linear-gradient(90deg, transparent 0%, transparent ${bgWidthOffset*coefficient}%, #eaeaea ${bgWidthOffset*coefficient}%, #eaeaea 100%)`;
   }
+
   if (browser >= tableWidth && browser < desktopWidth) {
     if (rangeValue < line.offsetWidth - (line.offsetWidth - 5)) {
       coefficient = 0;
@@ -73,21 +74,18 @@ function changeStyle(rangeValue, fixTab) {
     bgSlider.style.backgroundImage = `linear-gradient(#ffffff 575px, transparent 575px, transparent 100%),
     linear-gradient(90deg, transparent 0%, transparent ${bgWidthOffset*coefficient}%, #eaeaea ${bgWidthOffset*coefficient}%, #eaeaea 100%)`;
   }
-
 }
 
-//Начальное состояние
-
-//Функция изминения
+/* Функция изминения */
 function moveAt(pageX, fixTab) {
   let range = pageX - left;
 
-  if (range >= 0  && range <= (right-left)) {
+  if (range >= 0 && range <= (right-left)) {
     changeStyle(range, fixTab);
   };
-};
+}
 
-//Слайдер для десктопной версии
+/* Слайдер для десктопной версии */
 if (browser >= desktopWidth) {
   changeStyle(205, 0);
   circle.onmousedown = (e) => {
@@ -108,12 +106,10 @@ if (browser >= desktopWidth) {
     circle.ondragstart = () => {
       return false;
     };
-
-  }
-
+  };
 }
 
-//Слайдер для таб версии
+/* Слайдер для таб версии */
 if (browser >= tableWidth && browser < desktopWidth) {
   changeStyle(205, 30);
   circle.ontouchstart = (e) => {
@@ -134,7 +130,5 @@ if (browser >= tableWidth && browser < desktopWidth) {
     circle.ondragstart = () => {
       return false;
     };
-
   };
-
 }
