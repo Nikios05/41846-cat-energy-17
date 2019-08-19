@@ -9,6 +9,7 @@
     <link rel="preload" href="fonts/oswaldregular.woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/oswaldregular.woff" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
+    <script src="js/polyfill/picturefill.js" async=""></script>
   </head>
   <body class="content no-js">
     <script>
@@ -104,7 +105,7 @@
                   e-mail:*
                   <input class="form__text" type="email" name="e-mail" placeholder="kuklachev@gmail.com">
                   <svg class="form__icon form__icon--mail" width="17" height="13" viewbox="0 0 17 13">
-                    <use xlink:href="img/sprite.svg#sprite-mail"></use>
+                    <use xlink:href="#sprite-mail"></use>
                   </svg>
                 </label>
               </p>
@@ -113,7 +114,7 @@
                   Телефон:*
                   <input class="form__text" type="tel" name="telephone" placeholder="8 (960) 900-60-90">
                   <svg class="form__icon form__icon--tel" width="20" height="20" viewbox="0 0 20 20">
-                    <use xlink:href="img/sprite.svg#sprite-phone"></use>
+                    <use xlink:href="#sprite-phone"></use>
                   </svg>
                 </label>
               </p>
@@ -186,7 +187,7 @@
           <li class="social-list__item">
             <a href="#" class="social-list__link" aria-label="Перейти на Вконтакте">
               <svg class="social-list__icon social-list__icon--vk" width="22" height="12" viewbox="0 0 22 12">
-                <use xlink:href="img/sprite.svg#sprite-vk"></use>
+                <use xlink:href="#sprite-vk"></use>
               </svg>
               Мы Вконтакте
             </a>
@@ -194,7 +195,7 @@
           <li class="social-list__item">
             <a href="#" class="social-list__link" aria-label="Перейти в Инстаграм">
               <svg class="social-list__icon social-list__icon--insta" width="16" height="16" viewbox="0 0 16.1 16">
-                <use xlink:href="img/sprite.svg#sprite-insta"></use>
+                <use xlink:href="#sprite-insta"></use>
               </svg>
               Мы в Инстаграме
             </a>
@@ -202,7 +203,7 @@
           <li class="social-list__item">
             <a href="#" class="social-list__link" aria-label="Перейти в Фейсбук">
               <svg class="social-list__icon social-list__icon--fb" width="10" height="19" viewbox="0 0 10 19">
-                <use xlink:href="img/sprite.svg#sprite-fb"></use>
+                <use xlink:href="#sprite-fb"></use>
               </svg>
               Мы в Фейсбуке
             </a>
@@ -212,7 +213,7 @@
           <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Перейти на курс HTML Academy">
             HTML Academy
             <svg class="copyright__icon" width="27px" height="34" viewbox="0 0 27 35">
-              <use xlink:href="img/sprite.svg#sprite-htmlacademy"></use>
+              <use xlink:href="#sprite-htmlacademy"></use>
             </svg>
           </a>
         </div>
@@ -222,7 +223,6 @@
     <script>
       document.createElement( "picture" );
     </script>
-    <script src="js/polyfill/picturefill.js" async=""></script>
     <script src="js/polyfill/svguse.js" defer=""></script>
     <script src="js/polyfill/focus-visible.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=c461c44d-a89d-4167-a9e9-008782f98509" type="text/javascript"></script>

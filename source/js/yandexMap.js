@@ -19,7 +19,7 @@ ymaps.ready(function () {
       hintContent: 'ул. Большая Конюшенная, д. 19/8'
   }, {
       iconLayout: 'default#image',
-      iconImageHref: '../img/map-pin.png',
+      iconImageHref: 'img/map-pin.png',
       iconImageSize: [102, 90],
       iconImageOffset: [-46, -102]
   });
